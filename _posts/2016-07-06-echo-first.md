@@ -3,6 +3,4 @@ layout: post
 title: Blogging Like a Genius
 ---
 
-### Hello World
-## Hi there
-# good day
+* another test, see how time flies
