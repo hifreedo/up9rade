@@ -3,6 +3,9 @@ layout: post
 title: Neural Network [grade 1]
 ---
 
+## Neural Network
+##### grade 1
+
 It's the initial post of series: neural network.
 
 The languages will be implemented here are: javascript and processing.
