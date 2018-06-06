@@ -117,3 +117,5 @@ Cite from [wikipedia](https://en.wikipedia.org/wiki/Sign_%28mathematics%29):
 > Sign of a number. Every number has multiple attributes (such as value, sign and magnitude). A real number is said to be positive if its value (not its magnitude) is greater than zero, and negative if it is less than zero. The attribute of being positive or negative is called the sign of the number.
 
 We will discuss the scenario of been zero later.
+
+[Codes on github](https://github.com/hifreedo/nnfs)
