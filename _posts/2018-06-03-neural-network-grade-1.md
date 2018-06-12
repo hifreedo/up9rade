@@ -4,7 +4,7 @@ title: Neural Network [grade 1]
 ---
 
 ## Neural Network
-##### grade 1
+##### grade 1: single perceptron
 
 It's the initial post of series: neural network.
 
@@ -118,4 +118,4 @@ Cite from [wikipedia](https://en.wikipedia.org/wiki/Sign_%28mathematics%29):
 
 We will discuss the scenario of been zero later.
 
-[Codes on github](https://github.com/hifreedo/nnfs)
+[Codes on github  https://github.com/hifreedo/nnfs](https://github.com/hifreedo/nnfs)
