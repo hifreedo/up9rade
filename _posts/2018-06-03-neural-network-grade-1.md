@@ -20,7 +20,9 @@ Neural network has wide usage in all sorts of machine learning scenarios. As sky
 
 Following is the diagram of simplest and basic unit of network, a processor. With millions even billions of perceptrons communicate to each other, a sophisticated system was built on top of it.
 
-[img]
+
+￼￼￼￼￼￼￼￼￼￼
+![](img/nn001.png)
 
 The target of grade 1: to build a linear classifier , which could classify 2 categories in a 2 dimension space.
 
