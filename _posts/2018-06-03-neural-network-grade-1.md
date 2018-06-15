@@ -20,10 +20,10 @@ Neural network has wide usage in all sorts of machine learning scenarios. As sky
 
 Following is the diagram of simplest and basic unit of network, a processor. With millions even billions of perceptrons communicate to each other, a sophisticated system was built on top of it.
 
-
-￼￼￼￼￼￼￼￼￼￼
-![](img/nn001.png)
-
+<figure>
+<a><img src="{{site.url}}/img/nn001.png" width="600px"></a>
+</figure>
+￼￼￼￼￼￼￼
 The target of grade 1: to build a linear classifier , which could classify 2 categories in a 2 dimension space.
 
 What's the basic functionality of a neuron , aka perceptron in machine learning terminology. Typically, a perceptron takes in inputs, sum up them, according to a "predefined" rule of judge, outputs a setting value.
