@@ -15,27 +15,30 @@
 
 <p>Following is the diagram of simplest and basic unit of network, a processor. With millions even billions of perceptrons communicate to each other, a sophisticated system was built on top of it.</p>
 
-<p>[img]</p>
+<p><img src="http://localhost:4000/img/nn001.png" width="600px" /></p>
 
-<p>The target of grade 1: to build a linear classifier , which could classify 2 categories in a 2 dimension space.</p>
+<p>￼￼￼
+The target of grade 1: to build a linear classifier , which could classify 2 categories in a 2 dimension space.</p>
 
 <p>What’s the basic functionality of a neuron , aka perceptron in machine learning terminology. Typically, a perceptron takes in inputs, sum up them, according to a “predefined” rule of judge, outputs a setting value.</p>
 
+<p><img src="http://localhost:4000/img/nn010.png" width="500px" /></p>
+
 <p>Here, a perceptron could take in thousands and even more inputs, i.e. in image classification scenarios. While use 2 inputs here, other than simplify the scenario, 2 inputs could be project to a 2 dimension space x value and y value, which makes it easier for us to visualize.</p>
 
-<p>First, let’s pass our initial target, make a workable perceptron, just like the 1st cell in biological evolution.</p>
+<p>First, let’s achieve our initial target, make a workable perceptron, just like the 1st cell in biological evolution.</p>
 
-<p>As a perceptron, 2 main functionalities:</p>
-<ol>
-  <li>sum up</li>
-  <li>judge</li>
-</ol>
+<p>As a perceptron, 2 main functionalities:
+step 1. sum up input values according its weights
+step 2. sign inputs and generate outputs of -1 and 1</p>
+
+<p><img src="http://localhost:4000/img/nn011.png" width="500px" /></p>
 
 <p>Let’s start implement some codes here, following are the core codes in processing:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Perceptron {
   float[] weights;
-  float learning_rate = 0.01;
+  float learning_rate = 0.01; // a random picked value
 
   // Constructor, takes in # of weights and initialize
   Perceptron(int n) {
@@ -84,20 +87,19 @@ void draw() {
 }
 </code></pre></div></div>
 
-<p>Simple like that.</p>
+<p>Simply like that.</p>
 
-<p>Second, come up with a scenario, and let’s commence a classification problem, which is arbitrary divide a 2D space.</p>
+<hr />
 
-<p>To accomplish this, the concept of “training” - (tweak outputs according to training set will be introduced) .</p>
+<p>Grade 2:
+Let’s see what does a “neuron” really get.
+We will come up with a scenario, commence a classification problem: linearly split a 2D space.</p>
 
-<p>During training process:
-How to represent “error”:
-How to adjust weight</p>
+<hr />
 
 <p>Math been invoked in this grade:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sum = w0*x0 + w1*x1 + ...
-error = current - truth
 sign
 </code></pre></div></div>
 
