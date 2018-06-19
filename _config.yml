@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Mainly focus on machine learning and deep learning, explain things in a visualized way.
   For each series, will present up to 9 grades' challenges.
 baseurl: / # the subpath of your site, e.g. /blog
-url: "up9rade.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://up9rade.com" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 github_username:  hifreedo
 
