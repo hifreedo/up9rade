@@ -1,0 +1,10 @@
+_posts/.DS_Store
+img/.DS_Store
+.DS_Store
+_drafts
+_site
+.bundle
+.sass-cache
+Gemfile.lock
+*.gem
+.jekyll-metadata
