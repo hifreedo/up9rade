@@ -97,15 +97,12 @@ void draw() {
 
 Simply like that.
 
-***
+[Codes on github  https://github.com/hifreedo/nnfs](https://github.com/hifreedo/nnfs)
 
-Grade 2:
-Let's see what does a "neuron" really get.
-We will come up with a scenario, commence a classification problem: linearly split a 2D space.
 
-***
 
-Math been invoked in this grade:
+
+#### Math been invoked in this grade:
 
 ```
 sum = w0*x0 + w1*x1 + ...
@@ -119,4 +116,8 @@ We will discuss the scenario of been zero later.
 
 
 
-[Codes on github  https://github.com/hifreedo/nnfs](https://github.com/hifreedo/nnfs)
+#### To be continued in Grade 2:
+Let's see what does a "neuron" really get.
+We will come up with a scenario, commence a classification problem: linearly split a 2D space.
+
+[almost done]
