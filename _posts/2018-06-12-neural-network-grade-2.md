@@ -28,7 +28,7 @@ Let's review data we played with:
 * outputs (use the sign function to generate -1 and 1);
 
 The object here is to accept any of inputs, make the perceptron outputs the rights classification, say "-1" and "1".
-Thus data we could manipulate here is : weights.
+Thus the data we could manipulate here is : weights.
 How do we refine the magic weights, make those help the perceptron doing the right thing?
 
 <img src="{{site.url}}/img/nn011.png" width="500px">
@@ -63,12 +63,31 @@ Learning_rate is one of a hyper-parameters in neural network, which impacts the 
 The process of:
 Compare outputs with actual class, get the degree of errors, passed errors back to input layer, adjust weights accordingly is called: back propagation, or training (tweak outputs according to training data given). By doing this process, the neuron perceptrons are really learning from errors.
 
-The coding part:
+Let's take a look at an simple example:
+Following is a feed forward process, 2 inputs are 0.5 and 1, 2 randomly assigned weights: 0.1 and -0.5, the perceptron generates output of -1.
+
+Inputs | Original weights | Sum(inputs * weights) | Sign outputs
+--- | --- | --- | ---
+0.5 | 0.1 | 0.5 * 0.1 |
+1 | -0.5 | 1 * -0.5|
+ | | 0.05 - 0.5 | -1
+
+Now assume we are expecting the output of "1" instead of "-1", let's see how the back propagation impacts weights:
+
+Errors | Inputs | Learning_rate | New Weights | Original weights
+--- | --- | --- | --- | ---
+1 - (-1) | 0.5 | 1 | 2 * 0.5 * 1 | 0.1
+1 - (-1) | 1 | 1 | 2 * 1 * 1 | -0.5
+
+Under the original weights combination, 0.1 and -0.5, gave the output of -1.
+Through back propagation, they were been tweaked into 1 and 2. They were increased especially for the latter: -0.5 was punished, from negative to positive value, aka, the direction of impact was changed.
+
+Now let's cook the coding part:
 On top of predict function in grade 1, we will add another training function within perceptron class:
 
 ```
 
-
+give 2 real data examples on how weights were tweaked.
 
 ```
 
