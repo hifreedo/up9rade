@@ -3,8 +3,9 @@ layout: post
 title: Neural Network [grade 2]
 ---
 
-## Neural Network
-##### grade 2: single perceptron with linear classification
+# Neural Network
+
+## grade 2: single perceptron with linear classification
 
 Subject for grade 2 is to develop a linear classification with single perceptron.
 
@@ -23,6 +24,7 @@ The network structure remain unchanged with grade 1:
 Classification is a typical "supervised learning" in machine learning, which means machine's performance on predict objects will be measured all the time. When we are saying performance, usually we are talking about the degree of errors.
 
 Let's review data we played with:
+
 * inputs (2 inputs, reason of 2 is which could be easily mapped to the 2D space by transfer them to x and y coordinates);
 * weights (initialized by random between 0 to 1);
 * outputs (use the sign function to generate -1 and 1);
@@ -82,26 +84,60 @@ Errors | Inputs | Learning_rate | New Weights | Original weights
 Under the original weights combination, 0.1 and -0.5, gave the output of -1.
 Through back propagation, they were been tweaked into 1 and 2. They were increased especially for the latter: -0.5 was punished, from negative to positive value, aka, the direction of impact was changed.
 
+（Note: "1" is not the usual value for learning rate, we will take a much smaller learning rate in practical. ）
+
 Now let's cook the coding part:
-On top of predict function in grade 1, we will add another training function within perceptron class:
+On top of predict function in grade 1, we will add another training function within perceptron class in processing:
+
+```processing
+class Perceptron {
+  float[] weights;
+  float learning_rate = 0.01;
+
+  // Constructor, takes in # of weights and initialize
+  Perceptron(int n) {
+    weights = new float[n];
+    for (int i = 0; i < weights.length; i++) {
+      weights[i] = random(-1, 1);
+    }
+  }
+
+  // Generate outputs
+  int predict(float[] inputs) {
+    float sum = 0;
+    for (int i= 0; i < weights.length; i++) {
+      sum += inputs[i] * weights[i];
+    }
+    int predict = sign(sum);
+    return predict;
+  }
+
+  // training
+  void training(float[] inputs, int label, int predict ) {
+    int error = label - predict;
+    for (int i = 0; i < weights.length; i++) {
+      weights[i] = error * input[i] * learning_rate;
+    }
+  }
+
+  // Activate function
+  int sign(float sum) {
+    if (sum >= 0) {
+      return 1;
+    } else {
+      return -1;
+    }
+  }
+
+}
 
 ```
-
-give 2 real data examples on how weights were tweaked.
-
-```
-
-
-
 
 <img src="{{site.url}}/img/nn003.png" width="500px">
 
 <img src="{{site.url}}/img/nn005.png" width="500px">
 
-
 [Codes on github  https://github.com/hifreedo/nnfs](https://github.com/hifreedo/nnfs)
-
-
 
 
 #### Math been invoked in this grade:

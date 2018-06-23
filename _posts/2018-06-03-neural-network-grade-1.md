@@ -3,8 +3,9 @@ layout: post
 title: Neural Network [grade 1]
 ---
 
-## Neural Network
-##### grade 1: single perceptron
+# Neural Network
+
+## grade 1: single perceptron
 
 It's the initial post of series: neural network.
 
@@ -80,7 +81,7 @@ class Perceptron {
 
 How does a perceptron work, just as following:
 
-```
+```processing
 Perceptron nn;
 
 void setup() {
@@ -99,12 +100,9 @@ Simply like that.
 
 [Codes on github  https://github.com/hifreedo/nnfs](https://github.com/hifreedo/nnfs)
 
+### Math been invoked in this grade
 
-
-
-#### Math been invoked in this grade:
-
-```
+```math
 sum = w0*x0 + w1*x1 + ...
 sign
 ```
@@ -114,9 +112,8 @@ Cite from [wikipedia](https://en.wikipedia.org/wiki/Sign_%28mathematics%29):
 
 We will discuss the scenario of been zero later.
 
+### To be continued in Grade 2
 
-
-#### To be continued in Grade 2:
 Let's see what does a "neuron" really get.
 We will come up with a scenario, commence a classification problem: linearly split a 2D space.
 

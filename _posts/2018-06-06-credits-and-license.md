@@ -3,11 +3,11 @@ layout: post
 title: Credits and License
 ---
 
-## Credits
+# Credits
 
 It's important to address a big amount of online resources,
 which may be cited in here, some of them I aware of,
-some of them may be used here unconsiously.
+some of them may be used here unconsciously.
 Would try best to list the resources I used and send my sincere
 thanks and respect to all of the authors.
 
