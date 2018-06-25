@@ -116,7 +116,7 @@ class Perceptron {
   void training(float[] inputs, int label, int predict ) {
     int error = label - predict;
     for (int i = 0; i < weights.length; i++) {
-      weights[i] = error * input[i] * learning_rate;
+      weights[i] += error * input[i] * learning_rate;
     }
   }
 
@@ -139,6 +139,8 @@ class Perceptron {
 
 [Codes on github  https://github.com/hifreedo/nnfs](https://github.com/hifreedo/nnfs)
 
+
+<img src="{{site.url}}/img/nn_g2.gif" width="500px">
 
 #### Math been invoked in this grade:
 

@@ -9,7 +9,7 @@ title: Neural Network [grade 1]
 
 It's the initial post of series: neural network.
 
-The languages will be implemented here are: javascript and processing.
+The languages will be implemented here are: javascript/python and processing.
 
 Reason for choosing these 2, is they are easy to visualize and provides friendly interaction, which will help out in understanding "how".
 
@@ -32,7 +32,6 @@ What's the basic functionality of a neuron , aka perceptron in machine learning 
 
 Here, a perceptron could take in thousands and even more inputs, i.e. in image classification scenarios. While use 2 inputs here, other than simplify the scenario, 2 inputs could be project to a 2 dimension space x value and y value, which makes it easier for us to visualize.
 
-
 First, let's achieve our initial target, make a workable perceptron, just like the 1st cell in biological evolution.
 
 As a perceptron, 2 main functionalities:
@@ -43,7 +42,7 @@ step 2. sign inputs and generate outputs of -1 and 1
 
 Let's start implement some codes here, following are the core codes in processing:
 
-```
+```processing
 class Perceptron {
   float[] weights;
   float learning_rate = 0.01; // a random picked value
@@ -88,6 +87,11 @@ void setup() {
   size(400, 400);
   nn = new Perceptron(2);
   float inputs[] = {0.5, -1};
+  // with bias version, there will be 3 inputs and 3 weights accordingly
+  /*
+  nn = new Perceptron(3);
+  float inputs[] = {0.5, -1, 1}; // we give default value of bias: 1
+  */
   int predict = nn.predict(inputs);
   println(predict);
 }
@@ -110,11 +114,19 @@ sign
 Cite from [wikipedia](https://en.wikipedia.org/wiki/Sign_%28mathematics%29):
 > Sign of a number. Every number has multiple attributes (such as value, sign and magnitude). A real number is said to be positive if its value (not its magnitude) is greater than zero, and negative if it is less than zero. The attribute of being positive or negative is called the sign of the number.
 
-We will discuss the scenario of been zero later.
+We will discuss the scenario of been zero now:
+With the equation: sum = weight*X, let's try to simplify it into: y = w*x, we may encounter with y = 0 when weight or x is zero. And to 0, the sign in strict definition actually could not apply, thus positive or negative could not be generated.
+
+As we know, with equation: y = w*x, which could only generate a line cross through the coordinate (0, 0).
+
+As y = w*x + b is the real universal equation that could draw any line from any direction is a 2D dimension, here we could simply add "another" input to the neuron network structure, which is called the "bias". Which is a fixed number in practical and has its weight as well. Hence, the equation for sum up values with perceptron turns into: 
+sum = weight *x + weight * bias
+
+As bias usually takes "1" as value, by doing this, we eliminate the impact of sum to be zero and developed a universal 2D linear classification function: y = w*x + b. Which will be implemented in detail in grade 2:
 
 ### To be continued in Grade 2
 
 Let's see what does a "neuron" really get.
 We will come up with a scenario, commence a classification problem: linearly split a 2D space.
 
-[almost done]
+[post status: almost done]
