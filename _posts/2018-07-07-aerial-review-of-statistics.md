@@ -39,11 +39,11 @@ alternative hypothesis | the new coin is abnormal
 
 Agreed or not, you took the coin and made some experiments alone. Under the pushy of your friend, you made 5 flips, got 5 times of tail.
 
-## Check power of data, does it provides enough evidence
+## Check power of data, does it provide enough evidence
 
 Is 3 or 5 flips enough? Should you try more times to verify the hypothesis? Power analysis is a way to check how much power you will get among the collected data. The power is about to take you away from the null / default hypothesis, after all, it's pretty easy to not to accept any alternatives by doing nothing.
 
-## Test hypotheses, see what will you get and avoid making errors
+## Test hypotheses, see what will you get and avoid of making errors
 
 As conclusion of testing process, you will either stick to original / null hypothesis, reject the alternative, which means there's no new thing found or learned. Or you will accept the alternative and reject the null hypothesis, yes, you found it, someone's cheating.
 
