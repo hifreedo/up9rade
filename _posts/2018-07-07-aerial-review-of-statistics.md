@@ -26,3 +26,4 @@ A typical way of statistics:
 
 $$E=MC^2$$
 
+[post status: half done]
