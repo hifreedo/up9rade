@@ -208,4 +208,4 @@ After learning process is done, the outcomes are the weights according to feeded
 
 Add network complexity, let's see what amazing job could the network perform by just adding 1 more neuron to the network.
 
-[post status: almost done]
+[post status: almost done, to move bias * weight away]
