@@ -17,7 +17,7 @@ Let's initiate with 2 samples, and sure the list will grow:
 
 ## case 1: leave out the plus sign
 
-In a [simple neuron network]("{{site.url}}/2018/06/12/neural-network-grade-2.html"), when doing the training part, we are trying to get the right "weight" as described below:
+In a [simple neuron network]({{site.url}}/2018/06/12/neural-network-grade-2.html), when doing the training part, we are trying to get the right "weight" as described below:
 
 $$Weight += Error * Learning_rate * Input$$
 
