@@ -57,7 +57,6 @@ Here will be nice to have a diagram to indicate relationships between this 3, wi
 
 %matplotlib inline
 import matplotlib.pyplot as plt
-import random
 import numpy as np
 
 # global settings
@@ -72,7 +71,7 @@ class Bandit:
         self.bandits = len(bandit_prob)
         self.bandit_prob = bandit_prob
     def giveReward(self, action):
-        rand = random.random()
+        rand = np.random.random()
         reward = 1 if (rand < self.bandit_prob[action]) else 0
         return reward
 
@@ -83,7 +82,7 @@ class Agent:
         self.Q = np.zeros(n_bandits, dtype = float) # action value history
         
     def makeChoice(self, n_bandits):
-        rand = random.random()
+        rand = np.random.random()
         if rand < self.epsilon:
             return np.random.randint(n_bandits)
         else:
