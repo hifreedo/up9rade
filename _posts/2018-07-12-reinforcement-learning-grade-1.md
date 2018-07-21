@@ -32,6 +32,12 @@ $$ Q_{n+1} = \frac{1}{n}(R_n+(n-1)Q_n) $$
 
 $$ Q_{n+1} = Q_n + \frac{1}{n}(R_n - Q_n) $$
 
+In python:
+
+```python
+Q[action] += 1. / K[action] * (reward - Q[action])
+```
+
 And till now, the derivation is perfectly done, on calculating each Q, we will only need 2 parameters: the number of selections "n" and the current reward R.
 
 Now let's start the code implementation.
@@ -162,3 +168,21 @@ Average rewards over steps:
 Bandit chose percentage over steps:
 
 <img src="{{site.url}}/img/mab_e_02.png">
+
+There're couple of time I was explaining e-greedy to people without using formulas.Here's a simple version I used:
+
+Assume you were in a gambling house with a bag of chips, you were playing with 6 slot machines, for each machine there was a bandit, every time you feed it with a chip, and it gives certain reward or zero.
+
+You don't know which machine is your lucky one, and for sure, the target is to gain maximum rewards after a period of time.
+
+Here's the called e-greedy approach, that likely will make you gain some money:
+
+You will need a pen and a piece of paper, and a dice. You start with pick a random machine by rolling the dice, and maintain a list of average rewards of each machine. For e.g. machine No.6, total selection: twice, reward once, so average reward will be 1/2.
+
+For each time, you spend the chip on the machine returns with the most reward, if there are more than one machine satisfies the condition, then pick up one randomly among them.But wait, prior to inject the chip, rolling the dice, if it gives you with "one", then rolling again, and pick the specified machine according to the number you get on 2nd rolling. If the first rolling returns with a number between 2 and 6, then stick to select the machine with highest average reward.
+
+The selection to the one with highest reward, was called "exploit", to utilize current reward bonus. The procedure of "random choice", when rolling with the dice and got the number of "one" or any other specified number, was called "explore", is to give opportunities to other options.
+
+Life is a balance between explore and exploit.
+
+And they said there are 2 type of people: the explorer and the settler.
