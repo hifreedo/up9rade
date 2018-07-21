@@ -144,7 +144,7 @@ class Perceptron {
 }
 ```
 
-A small notice, we used $output = input *weight + bias* weight$ in the code implementation, with $bias = 1$ as predefined. [Complete codes on github] <https://github.com/hifreedo/nnfs>
+A small notice, we used output = input *weight + bias* weight in the code implementation, with bias = 1 as predefined. [Complete codes on github] <https://github.com/hifreedo/nnfs>
 
 Following is the animation of how a network with single neuron learns classification, red dot denotes wrong prediction, green means correct prediction, the line in black was drew according to object function, aka y=m*x+b. The line split the 2 categories which are 2 type of nodes on the picture. The red line shows how the network is learning iteration by iteration.
 
