@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reinforcement learning grade 1
+title: Reinforcement Learning [grade 1]
 ---
 
 # Reinforcement learning grade 1: MAB problem $\epsilon$-greedy
