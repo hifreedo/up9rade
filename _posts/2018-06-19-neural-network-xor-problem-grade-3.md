@@ -115,3 +115,11 @@ The inputs here could be referred to output layer or hidden layer as multi layer
 <img src="{{site.url}}/img/nn012.gif" width="280px">
 
 The above animation is the output of the code hosted in github, each block denotes an input array, and closer to 1 of the output, the darker will it looks like. The animation denotes starts from gray, and after 5000 runs training, which solved the XOR issue successfully.
+
+<img src="{{site.url}}/img/nn012.gif" width="400px">
+
+An intuitive understanding about "2 hidden nodes network structure" will bring significant impact is, if one hidden node denotes a single split line, 2 denotes 2 lines, 3 denotes 3 lines and more ...
+
+Put this scenario in a real world, with bricks, arbitrary curve of shape could be paved. Put back into the mathematical world, with multi-layers neural network been introduced, it can perform "curve fitting" job well :)
+
+Yes, deep neural network is about "curve fitting".
