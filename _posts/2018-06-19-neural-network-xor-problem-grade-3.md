@@ -3,7 +3,7 @@ layout: post
 title: Neural Network [grade 3]
 ---
 
-# Neural Network
+# Neural Network XOR problem
 
 ## grade 3: double perceptron with xor problem
 
@@ -123,3 +123,5 @@ An intuitive understanding about "2 hidden nodes network structure" will bring s
 Put this scenario in a real world, with bricks, arbitrary curve of shape could be paved. Put back into the mathematical world, with multi-layers neural network been introduced, it can perform "curve fitting" job well :)
 
 Yes, deep neural network is about "curve fitting".
+
+[post status: 70% done: gradient and chain rule to be introduced] 

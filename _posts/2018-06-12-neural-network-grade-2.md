@@ -3,7 +3,7 @@ layout: post
 title: Neural Network [grade 2]
 ---
 
-# Neural Network
+# Neural Network: linear classification
 
 ## grade 2: single perceptron with linear classification
 
@@ -207,3 +207,5 @@ After learning process is done, the outcomes are the weights according to feeded
 #### To be continued in Grade 3:
 
 Increase network complexity, let's see what amazing job could the network perform by just adding 1 more neuron to the network.
+
+[post status: almost done]
