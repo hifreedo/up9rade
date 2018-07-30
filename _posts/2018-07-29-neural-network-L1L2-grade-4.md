@@ -35,7 +35,9 @@ When comes to hidden nodes of 8, compares with structures of hidden nodes of 4, 
 
 With the network goes wider (more hidden nodes on single layer) and deeper (more layers), it has stronger power of representation. Things come with pros and cons, with "bigger" network there are higher risk on over fitting and consumes more computation source.
 
-With introduction of L1 and L2, which aims to minimize over fitting by squeeze some "outlier" weights close or equals to zero. Take a look at the 3rd image of "8 hidden nodes", under L1 regularization terms, there are 3 nodes'(in color gray) weight been set to zero, which means there inactive in the network and will not join further feed and back propagation. With the rest of 5 nodes, the network performs the xor job well.
+With introduction of L1 and L2, which aims to minimize over fitting by squeeze some "outlier" weights close or equals to zero. Take a look at the 3rd image of "8 hidden nodes", under L1 regularization terms, there are 3 nodes'(in color gray) weight been set to zero, which means they are inactive in the network and will not join further feed and back propagation. With the rest of 5 nodes, the network performs the xor job well.
+
+The L1 puts similar effect like "drop out" in 3rd image, we will not introduce all of the methodologies of avoiding over fitting in this post.
 
 L1 regularization:
 
@@ -70,7 +72,7 @@ We want to eliminate 5 , 6, 7. In practice, we don't know which one to eliminate
 
 On doing the "squeeze" processing, for L1 some features / weights will be set to zero, we may think in a way that L1 is the process of subtract a small part for each time, and for L2, some weights will be set to very close to zero but will not be zero, we may think L2 is to multiply a small proportion each time.
 
-The $\lambda$ here is the hyper-parameter, if set to zero, then means there will be no regularization, if set to infinite, what we will get is likely all of the weights been set to zero. Like the function (4), which will be turned into: 
+The $\lambda$ here is the hyper-parameter, if set to zero, then means there will be no regularization, if set to infinite, what we will get is likely all of the weights been set to zero. Like the function (4), which will be turned into:
 
 $$ y = 2 $$
 

@@ -9,6 +9,44 @@ title: Matrix Multiplication
 
 ## How to code multiplication
 
+In the previous post of [xor problem]({{site.url}}/2018/06/19/neural-network-xor-problem-grade-3.html), we introduce the network of 2 inputs nodes, 2 hidden nodes and 1 output as the following:
+
+<img src="{{site.url}}/img/nn019.png">
+
+We calculate the values of P1 & P2 as following:
+
+$$ \begin{cases}
+  W_1 * L_1 + W_3 * L_2 = P_1 \\
+  W_2 * L_1 + W_4 * L_2 = P_2
+  \end{cases}$$
+
+The linear functions is exact the format of matrix as following:
+
+$$
+\begin{pmatrix}
+     W_1 & W_3 \\
+     W_2 & W_4
+\end{pmatrix}
+*
+\begin{pmatrix}
+     L_1 \\
+     L_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+     P_1 \\
+     P_2
+\end{pmatrix}
+$$
+
+Every matrix represents some linear function, and every linear function is represented by a matrix. That's the strong connection between the linear function and matrix. In linear space, matrix multiplication represents linear transformation, i.e. a movement in space. The first matrix {w} means movement, the second matrix {L} is the basis, the third {P} is the new location.
+
+So in linear space, the network represents through a set of transformation, the original input outputs the result we expect to, either classification problem or regression problem.
+
+Matrix is a perfect tool for neural network computation.
+
+<img src="{{site.url}}/img/nn020.png">
+
 Matrix multiplication in processing:
 
 ```processing
