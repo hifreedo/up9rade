@@ -55,6 +55,48 @@ And we have a convenient way for calculating the gradient:
 
 $$s'(x)= s(x) * (1-s(x))$$
 
+
+Now let's have an implementation of back propagation process:
+
+<img src="{{site.url}}/img/nn021.png">
+
+Assume we have a simplified network, which consists of : 1 node for input layer, denotes as "I", 1 node for hidden layer, denote as "H", and one node for output layer denote as "O".
+
+Say target output is "1" or "0", denote as "Y", we then have the error or cost as:
+
+$$ Error = (O_{utput-activated} - Y)^2 $$
+
+$$ O_{utput-activated} = \sigma (H_idden * W_h + Bias) $$
+
+$$ \sigma = \frac{1}{1 + e^{-x}} $$
+
+$$ O_{utput} = H_idden * W_{hidden} + Bias $$
+
+Here we use sigmoid as activate function.
+The purpose for us doing back propagation is to measure how much impact does the "weight" contribute to the output, by tuning the weight, we make the output moves towards "expect" direction.
+
+Following is how we measure the impact of "W_h" to the output:
+
+$$  \frac{\partial Error}{\partial W_h} =  \frac{\partial Error}{\partial O_{utput-activated}} * \frac{\partial O_{utput-activated}}{\partial O_{utput}} * \frac{\partial O_{utput}}{\partial W_{hidden}} $$
+
+This is what we called "chain rule". Now let's figure out how to implement the chain rule:
+
+$$ \frac{\partial Error}{\partial O_{utput-activated}} = 2(O_{utput−activated} −Y) $$
+
+$$ \frac{\partial O_{utput-activated}}{\partial O_{utput}} = \sigma' $$
+
+$$\sigma'(x)= \sigma(x) * (1-\sigma(x))$$
+
+$$ \frac{\partial O_{utput}}{\partial W_{hidden}} = Hidden $$
+
+Now bring back learning rate and ignore the constant number 2, the fomula turns into: 
+
+$$ \frac{\partial Error}{\partial W_{hidden}} = learningrate * (O_{utput−activated} −Y) * \sigma(x) * (1-\sigma(x)) * Hidden $$
+
+We have done the implementation of back propagation. Expand to multi-nodes in multi-layers, the methodology applies in the same way, we just sum up the correspond errors and previous layers' values.
+
+The process of back propagation is the way to figure out derivatives, and we should bear in mind, though deep neural network could be a very heavy in computation, as in graph computing, the powerful derivative tool helped us save a lot and make it achievable in deep neural network computation.
+
 (2):
 The inputs here could be referred to output layer or hidden layer as multi layer network was imported here. The matrix of output layer / hidden layer should be transposed in implementation, which will be introduced later.
 
@@ -124,4 +166,4 @@ Put this scenario in a real world, with bricks, arbitrary curve of shape could b
 
 Yes, deep neural network is about "curve fitting".
 
-[post status: 70% done: gradient and chain rule to be introduced] 
+[post status: almost done] 
