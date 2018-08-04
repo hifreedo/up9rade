@@ -93,6 +93,22 @@ Now bring back learning rate and ignore the constant number 2, the fomula turns 
 
 $$ \frac{\partial Error}{\partial W_{hidden}} = learningrate * (O_{utput−activated} −Y) * \sigma(x) * (1-\sigma(x)) * Hidden $$
 
+Calculate "W_i" to the output:
+
+$$  \frac{\partial Error}{\partial W_i} =  \frac{\partial Error}{\partial H_{idden-activated}} * \frac{\partial H_{idden-activated}}{\partial H_{idden}} * \frac{\partial H_{idden}}{\partial W_{input}} $$
+
+$$ \frac{\partial Error}{\partial H_{idden-activated}} = 2(O_{utput−activated} −Y) * W_{hidden} $$
+
+$$ \frac{\partial H_{idden-activated}}{\partial H_{idden}} = \sigma' $$
+
+$$\sigma'(x)= \sigma(x) * (1-\sigma(x))$$
+
+$$ \frac{\partial H_{idden}}{\partial W_{input}} = Input $$
+
+Now bring back learning rate and ignore the constant number 2, the fomula turns into: 
+
+$$ \frac{\partial Error}{\partial W_{input}} = learningrate * Error * W_{hidden} * \sigma(x) * (1-\sigma(x)) * Input $$
+
 We have done the implementation of back propagation. Expand to multi-nodes in multi-layers, the methodology applies in the same way, we just sum up the correspond errors and previous layers' values.
 
 The process of back propagation is the way to figure out derivatives, and we should bear in mind, though deep neural network could be a very heavy in computation, as in graph computing, the powerful derivative tool helped us save a lot and make it achievable in deep neural network computation.
