@@ -109,6 +109,8 @@ Now bring back learning rate and ignore the constant number 2, the fomula turns 
 
 $$ \frac{\partial Error}{\partial W_{input}} = learningrate * Error * W_{hidden} * \sigma(x) * (1-\sigma(x)) * Input $$
 
+A very good intuitive online tutorial about back propagation is [cs231n](https://www.youtube.com/watch?v=i94OvYb6noo) by Andrej Karpathy.
+
 We have done the implementation of back propagation. Expand to multi-nodes in multi-layers, the methodology applies in the same way, we just sum up the correspond errors and previous layers' values.
 
 The process of back propagation is the way to figure out derivatives, and we should bear in mind, though deep neural network could be a very heavy in computation, as in graph computing, the powerful derivative tool helped us save a lot and make it achievable in deep neural network computation.
@@ -183,3 +185,45 @@ Put this scenario in a real world, with bricks, arbitrary curve of shape could b
 Yes, deep neural network is about "curve fitting".
 
 [post status: almost done] 
+
+***
+
+Appendix:
+
+Following is the source code of Caffe, which implements sigmoid in forward and backward computing:
+
+```c++
+namespace caffe {
+
+template <typename Dtype>
+inline Dtype sigmoid(Dtype x) {
+  return 0.5 * tanh(0.5 * x) + 0.5;
+}
+
+template <typename Dtype>
+void SigmoidLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,
+    const vector<Blob<Dtype>*>& top) {
+  const Dtype* bottom_data = bottom[0]->cpu_data();
+  Dtype* top_data = top[0]->mutable_cpu_data();
+  const int count = bottom[0]->count();
+  for (int i = 0; i < count; ++i) {
+    top_data[i] = sigmoid(bottom_data[i]);
+  }
+}
+
+template <typename Dtype>
+void SigmoidLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,
+    const vector<bool>& propagate_down,
+    const vector<Blob<Dtype>*>& bottom) {
+  if (propagate_down[0]) {
+    const Dtype* top_data = top[0]->cpu_data();
+    const Dtype* top_diff = top[0]->cpu_diff();
+    Dtype* bottom_diff = bottom[0]->mutable_cpu_diff();
+    const int count = bottom[0]->count();
+    for (int i = 0; i < count; ++i) {
+      const Dtype sigmoid_x = top_data[i];
+      bottom_diff[i] = top_diff[i] * sigmoid_x * (1. - sigmoid_x);
+    }
+  }
+}
+```
