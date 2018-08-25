@@ -3,7 +3,7 @@ layout: post
 title: Neural Network [grade 4]
 ---
 
-# Neural Network L1 and L2
+# Neural Network with L1 and L2
 
 ## grade 4: regularization L1 and L2
 
@@ -21,11 +21,11 @@ A brief view of above 3 nets:
 
 With the 3 different networks, we perform an [xor problem]({{site.url}}/2018/06/19/neural-network-xor-problem-grade-3.html), the target is to get 99% accuracy on training set. Once hits the target, record the weights of the 3rd layer as following:
 
-hidden nodes | weights 
---- | --- 
-2 | 9.7 9.6 
+hidden nodes | weights
+--- | ---
+2 | 9.7 9.6
 4 | -3.4 -4.5 -4.7 4.9
-8 | -0.13 -0.58 -1.3 -1.3 -3.2 0.95 2.7 3.6 
+8 | -0.13 -0.58 -1.3 -1.3 -3.2 0.95 2.7 3.6
 
 As we tested in previous post: neural network for xor problem, a network consists of 2 hidden nodes could just do the classification job, though with a little inefficient, you may got 1 shot on 10 trials. As we know, with only 2 nodes, in case one node represents the weight in wrong direction, it's quite hard for the network to correct to the right direction.
 
