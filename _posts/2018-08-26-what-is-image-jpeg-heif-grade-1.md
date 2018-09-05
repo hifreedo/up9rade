@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What is an image file
+title: What is image file [grade 1]
 ---
 
 # What Is An Image File (JPEG)
@@ -21,7 +21,7 @@ JPEG is widely used in internet, while with the era of "5g" reaching, lossless d
 
 JPEG was released in 1992 (approved by ISO in 1994), and from 2017, apple iOS, macOS, watchOS, tvOS started to support a new image format: HEIF.
 
-# High Efficiency Image File format
+# High Efficiency Image File format (HEIF)
 
 HEIF is a container format (approved by ISO in 2015), it can contain still images and image collections, image bursts, image sequences, image derivations and auxiliary image storage. HEIF supports rectangular cropping and rotation by 90, 180, 270, as you may guess out, the purpose is to adapt to photography scenario, to enable manually adjust image or image sequence orientation without re-encoding image itself. This feature provides a lot computational efficiency.
 
