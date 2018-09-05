@@ -19,3 +19,5 @@ A slight note about word2vec, which treats words in corpus as leaf nodes, based 
 
 Now as you could see, we need to understand huffman coding because it was implemented in NLP and CV domains.
 
+There was said huffman coding was invented by David A. Huffman in 1952 while he was attending exam in MIT.
+
