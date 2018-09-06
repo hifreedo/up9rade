@@ -21,7 +21,7 @@ Now as you could see, we need to understand huffman coding because it was adopte
 
 There was said huffman coding was invented by David A. Huffman in 1952 while he was attending exam in MIT.
 
-The description in detail [wiki](https://en.wikipedia.org/wiki/Huffman_coding)
+The description in detail [wiki](https://en.wikipedia.org/wiki/Huffman_coding).
 
 Pesudo codes:
 
@@ -55,7 +55,6 @@ class Node():
         self._right = None
 
 class HuffmanTree():
-
     # based on leaf node, grow the tree
     def __init__(self,char_weights):
         # create node for each char
@@ -96,6 +95,4 @@ if __name__ == '__main__':
     char_weights = [('i',3), ('p',7), ('h',6), ('o',5), ('n',1), ('e',2)]
     tree = HuffmanTree(char_weights)
     tree.get_code()
-
-
 ```
