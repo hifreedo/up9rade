@@ -96,3 +96,5 @@ if __name__ == '__main__':
     tree = HuffmanTree(char_weights)
     tree.get_code()
 ```
+
+[post status: half done]
