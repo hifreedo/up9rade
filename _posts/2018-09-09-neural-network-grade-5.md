@@ -148,6 +148,6 @@ for i in range(epochs):
 
 ```
 
-Please be noted the above codes were in python 3.
+Please be noted the above codes were in python 3 notebook.
 
 [post status: half done]
