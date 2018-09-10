@@ -24,7 +24,7 @@ Key points:
 
 * [Feature scaling](https://en.wikipedia.org/wiki/Feature_scaling) , scale the training data from (0 to 255) to (0 to 1). Take the simple min max normalization, is to divide by 255 to each number.
 * Weights distribution, to make sure the random assigned weights to the input nodes and hidden nodes, are aligned with standard normal distribution, they should have positives and negatives, instead of common mistakes: all positive or all in 0 to 1.
-* Reasonable network structure and hyper parameters: the input and output nodes are fixed numbers, 784 and 10. The hidden layer nodes are suggested to take a number between 100 to 700, it's a balance need to make between efficiency and accuracy. You might make a network with 1000 hidden nodes work and yield good performance, but which will take way longer time to train. As the learning rate, suggestion is to tuning around 0.1.
+* Reasonable network structure and hyper parameters: the input and output nodes are fixed numbers, 784 and 10. The hidden layer nodes are suggested to take a number between 100 to 400, it's a balance need to make between efficiency and accuracy. You might make a network with 1000 hidden nodes work and yield good performance, but which will take way longer time to train. As the learning rate, suggestion is to tune around 0.1.
 
 ```python
 # mnist mini version
