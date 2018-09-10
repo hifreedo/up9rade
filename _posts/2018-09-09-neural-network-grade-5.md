@@ -5,14 +5,26 @@ title: Neural Network [grade 5]
 
 # Neural Network solving mnist
 
-## grade 4: Mini version of solving mnist
+## grade 4: Mini version of mnist classification
 
 The mnist solving is a big milestone for neural network practice in real field.
 
-We will represent a workable mini version for solving mnist, on this version, the main items and challenges will be went through.
+We will present a workable mini version, in this version, the main items and challenges will be went through.
 
-To get started, you will need to download mnist dataset in csv format by your own. The csv files will be 1 for training, 60k images in toal, and 1 for test, 10k images.
-For each line, represents an image, 785 columns, 1st number denotes a label (from 0 to 9), the following 784 numbers denote pixels of the 28 * 28 image.
+To get started, you will need to download mnist dataset in csv format, the dataset is pretty easy to be found online. There are 2 csv files: 1 for training, 60k images in toal, and 1 for test, 10k images. Each line represents an image, 785 columns in total, 1st number denotes a label (from 0 to 9), the following 784 numbers denote the 28*28 pixels image.
+
+The core part: "train function" in neural network as following, is no more than 20 lines of code.
+Yet with these 20 lines, in 30 epochs, the model could achieve up to 97.76% accuracy in training set, which means among 10,000 images, only 240 images was misclassified.
+
+This is quite amazing result, the back propagation algorithm is easy to understand and not difficult to implement, yet could achieve better classification result than the other algorithms, such as: SVM, KNN, Random Forest etc.
+
+To achieve above performance of 97.6% in the mini 2 layers' network (1 hidden layer and 1 output layer, we do not count the input layer in, because it won't participate in the calculation), you will need to pay attention to the following key points, otherwise you won't be able to reproduce, or even could not make the network work in a reasonable way.
+
+Key points:
+
+* [Feature scaling](https://en.wikipedia.org/wiki/Feature_scaling) , scale the training data from (0 to 255) to (0 to 1). Take the simple min max normalization, is to divide by 255 to each number.
+* Weights distribution, to make sure the random assigned weights to the input nodes and hidden nodes, are aligned with standard normal distribution, they should have positives and negatives, instead of common mistakes: all positive or all in 0 to 1.
+* Reasonable network structure and hyper parameters: the input and output nodes are fixed numbers, 784 and 10. The hidden layer nodes are suggested to take a number between 100 to 700, it's a balance need to make between efficiency and accuracy. You might make a network with 1000 hidden nodes work and yield good performance, but which will take way longer time to train. As the learning rate, suggestion is to tuning around 0.1.
 
 ```python
 # mnist mini version
@@ -124,7 +136,7 @@ class NeuralNetwork():
                 wrong += 1
         return correct, wrong        
         
-_activate = relu
+_activate = sigmoid
 _dactivate = dsigmoid
 _num_in_nodes = 784
 _num_hidden_nodes = 100
