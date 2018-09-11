@@ -26,6 +26,13 @@ Key points:
 * Weights distribution, to make sure the random assigned weights to the input nodes and hidden nodes, are aligned with standard normal distribution, they should have positives and negatives, instead of common mistakes: all positive or all in 0 to 1.
 * Reasonable network structure and hyper parameters: the input and output nodes are fixed numbers, 784 and 10. The hidden layer nodes are suggested to take a number between 100 to 400, it's a balance need to make between efficiency and accuracy. You might make a network with 1000 hidden nodes work and yield good performance, but which will take way longer time to train. As the learning rate, suggestion is to tune around 0.1.
 
+When we have a fixed depth neural network, it seems better performance still could be achieved by increasing width of network, even have number of nodes from middle layer bigger than number of input nodes, for e.g. set the hidden layer nodes 1000 compares to inputs of 784.
+And of course, the training time is dramatically increased.  
+
+Towards current network structure： a large net (from width perspective, slightly bigger than input nodes) might give you some good, only if you could bare with training cost. A large learning rate, greater than 1, definitely could not supply any of goods on both performance and efficiency.
+
+And you might also take this into consideration, what will the accuracy be after run many epochs if we set the learning rate as negative value?
+
 ```python
 # mnist mini version
 
