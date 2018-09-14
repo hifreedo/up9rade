@@ -169,6 +169,29 @@ for i in range(epochs):
 
 Please be noted the above codes were in python 3 notebook.
 
+Following is an experiment, with parameters as:
+
+* Input nodes: 784
+* Hidden nodes: 100
+* Output nodes: 10
+* Learning_rate: 0.1
+* Bias: 1
+
+Use the above settings as benchmark, then wiggle the parameters from different perspective.
+
+A few observations through the experiments:
+
+* Set bias to 0, 0.5, 1 doesn’t make observable difference.
+Greater than 0.1 on learning rate side doesn’t make good on performance either.
+* Performance goes up while increasing number of hidden nodes (up to 97.79%), especially when set the number to 1000, on the other hand, the training time increases significantly, take 10X times compares to the benchmark with 100 hidden nodes.
+
+So, we may consider to have a solid network structure first, then tune the hyper parameters.
+
+As said, this is the mini version of mnist classification, in the coming future posts, various activation functions, multi hidden layers, L1 and L2 normalization and batch normalization methods will be introduced into coming versions.
+
 <img src="{{site.url}}/img/nn022.png">
+
+
+
 
 [post status: half done]
