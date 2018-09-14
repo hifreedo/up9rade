@@ -169,4 +169,6 @@ for i in range(epochs):
 
 Please be noted the above codes were in python 3 notebook.
 
+<img src="{{site.url}}/img/nn022.png">
+
 [post status: half done]
