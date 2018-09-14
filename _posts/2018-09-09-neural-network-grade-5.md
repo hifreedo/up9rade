@@ -26,12 +26,13 @@ Key points:
 * Weights distribution, to make sure the random assigned weights to the input nodes and hidden nodes, are aligned with standard normal distribution, they should have positives and negatives, instead of common mistakes: all positive or all in 0 to 1.
 * Reasonable network structure and hyper parameters: the input and output nodes are fixed numbers, 784 and 10. The hidden layer nodes are suggested to take a number between 100 to 400, it's a balance need to make between efficiency and accuracy. You might make a network with 1000 hidden nodes work and yield good performance, but which will take way longer time to train. As the learning rate, suggestion is to tune around 0.1.
 
-When we have a fixed depth neural network, it seems better performance still could be achieved by increasing width of network, even have number of nodes from middle layer bigger than number of input nodes, for e.g. set the hidden layer nodes 1000 compares to inputs of 784.
-And of course, the training time is dramatically increased.  
+Alright now, before dive into constructing the network by hand, take a deep breath, go through feed forward and back propagation on the paper, look out and there are traps need to pay attention to:
 
-Towards current network structure： a large net (from width perspective, slightly bigger than input nodes) might give you some good, only if you could bare with training cost. A large learning rate, greater than 1, definitely could not supply any of goods on both performance and efficiency.
+* The bias, with adding bias, the dimension of inputs & hidden layer will by changed. Hence the weights will be changed accordingly.
+* The matrix transformation, need to be conducted in both feed forward and back propagation process.
 
-And you might also take this into consideration, what will the accuracy be after run many epochs if we set the learning rate as negative value?
+
+
 
 ```python
 # mnist mini version
@@ -187,11 +188,20 @@ Greater than 0.1 on learning rate side doesn’t make good on performance either
 
 So, we may consider to have a solid network structure first, then tune the hyper parameters.
 
-As said, this is the mini version of mnist classification, in the coming future posts, various activation functions, multi hidden layers, L1 and L2 normalization and batch normalization methods will be introduced into coming versions.
+When we dealing with a fixed depth neural network, it seems better performance still could be achieved by increasing width of network, even have number of nodes from middle layer bigger than number of input nodes, for e.g. set the hidden layer nodes 1000 compares to inputs of 784.
+And of course, the training time is dramatically increased.  
+
+Towards current network structure： a large net (from width perspective, slightly bigger than input nodes) might give you some good, only if you could bare with training cost. A large learning rate, greater than 1, definitely could not supply any of goods on both performance and efficiency.
+
 
 <img src="{{site.url}}/img/nn022.png">
 
+There's also another experiment conducted to test the way of learning rate choosing:
 
+
+And you might also take this into consideration, what will the accuracy be after run many epochs if we set the learning rate as negative value?
+
+As said, this is the mini version of mnist classification, in the coming future posts, various activation functions, multi hidden layers, L1 and L2 normalization and batch normalization methods will be introduced into coming versions.
 
 
 [post status: half done]
