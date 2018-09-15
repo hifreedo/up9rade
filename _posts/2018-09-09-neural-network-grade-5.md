@@ -191,6 +191,8 @@ for i in range(epochs):
     print("test precision: {0}".format(correct / (correct + wrong)))
 ```
 
+<img src="{{site.url}}/img/nn022.png">
+
 Following is an experiment, with parameters as:
 
 * Input nodes: 784
@@ -214,7 +216,7 @@ And of course, the training time is dramatically increased.
 
 Towards current network structure： a large net (from width perspective, slightly bigger than input nodes) might give you some good, only if you could bare with training cost. A large learning rate, greater than 1, definitely could not supply any of goods on both performance and efficiency.
 
-<img src="{{site.url}}/img/nn022.png">
+
 
 There's also another experiment conducted to test the way of learning rate choosing:
 
