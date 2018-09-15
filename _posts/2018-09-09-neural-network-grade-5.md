@@ -28,11 +28,40 @@ Key points:
 
 Alright now, before dive into constructing the network by hand, take a deep breath, go through feed forward and back propagation on the paper, look out and there are traps need to pay attention to:
 
-* The bias, with adding bias, the dimension of inputs & hidden layer will by changed. Hence the weights will be changed accordingly.
+* The bias, with adding bias, the dimension of inputs & hidden layer will by changed. Hence the weights' dimensions will be changed accordingly.
 * The matrix transformation, need to be conducted in both feed forward and back propagation process.
 
+In a network structure with bias of : 784 input nodes, 100 hidden nodes, 10 output nodes, the forward and backward processing looks as following:
 
+```python
+inputs = inputs + bias = [ 1 * 785]
+inputs.transform = [785 * 1]
+labels.transform = [10 * 1]
 
+hidden_layer = wih (100 * 785) dot inputs (785 *1) = [100 * 1]
+hidden_layer->activate
+
+hidden_layer = hidden_layer + bias = [101 * 1]
+out_layer = who (10 * 101) dot hidden_layer (101 * 1) = [10 * 1]
+out_layer->activate
+
+out_errors = labels(10 * 1) - out_layer(10 * 1) = [10 * 1]
+gradients = out_errors(10 * 1) * dactivate(out_layer) (10 * 1)
+gradients = learning_rate * gradients = [10 * 1]
+who_delta = gradients(10 * 1) dot hidden_layer.transform(1 * 100) = [10 * 101]
+who = who_delta(10 * 101) + who(10 * 101) = [10 * 101]
+
+hidden_errors = who.transform (101 * 10) dot out_errors(10 * 1) = [101 * 1]
+gradients = hidden_layer->deactivate
+gradients = hidden_errors (101 * 1) * gradients (101 * 1) = [101 * 1]
+gradients = learning_rate * gradients = [101 * 1]
+wih_delta = gradients (101 * 1) dot inputs.transform (1 * 785) = [101 * 785]
+wih_delta = wih_delta[:-1, :] = [100 * 785]
+wih = wih_delta (100 * 785) + wih (100 * 785) = [100 * 785]
+
+```
+
+Code implementation with python 3 in notebook:
 
 ```python
 # mnist mini version
@@ -167,8 +196,6 @@ for i in range(epochs):
 #     print(test_label[i], np.argmax(res), np.max(res))
 
 ```
-
-Please be noted the above codes were in python 3 notebook.
 
 Following is an experiment, with parameters as:
 
