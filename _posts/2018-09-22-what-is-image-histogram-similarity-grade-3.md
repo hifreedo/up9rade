@@ -44,10 +44,61 @@ Formula (1),(2),(3),(4) were implemented by OpenCV in compareHist function.
 
 Next, we will construct an experiment on testing above 6 methods:
 
-Take an image as base, it will compare to: itself, half of the base, split base into 2 parts and swap them, smaller size base, a similar image, a none related image.
+Take an image as base, it will compare to: itself, half of the base, split base into 2 parts and swap them, a similar image, a none related image. All these images are in same height & width.
 
 We will use OpenCV to calculate histogram, and implement above methods manually.
 
 ```python
+# histogram similarity calculation
 
+import cv2 as cv
+import numpy as np
+%matplotlib inline
+from matplotlib import pyplot as plt
+
+# load image
+src_base = cv.imread("dataset/base.jpg")
+src_test0 = cv.imread("dataset/base_swap.jpg")
+src_test1 = cv.imread("dataset/test1.jpg")
+src_test2 = cv.imread("dataset/test2.jpg")
+
+# convert to gray format
+gray_test0 = cv.cvtColor(src_test0, cv.COLOR_BGR2GRAY)
+gray_test1 = cv.cvtColor(src_test1, cv.COLOR_BGR2GRAY)
+gray_test2 = cv.cvtColor(src_test2, cv.COLOR_BGR2GRAY)
+gray_base = cv.cvtColor(src_base, cv.COLOR_BGR2GRAY)
+
+# create a test image as half of base image
+gray_test3 = gray_base[gray_base.shape[0]//2:,:]
+
+# histogram calculation
+histSize = [256]
+ranges = [0, 256]
+hist_base = cv.calcHist([gray_base], [0], None, histSize, ranges)
+hist_test0 = cv.calcHist([gray_test0], [0], None, histSize, ranges)
+hist_test1 = cv.calcHist([gray_test1], [0], None, histSize, ranges)
+hist_test2 = cv.calcHist([gray_test2], [0], None, histSize, ranges)
+hist_test3 = cv.calcHist([gray_test3], [0], None, histSize, ranges)
+
+# plt.plot(hist_base)
+# plt.plot(hist_test0)
+# plt.plot(hist_test1)
+# plt.plot(hist_test2)
+# plt.plot(hist_test3)
+# plt.xlim([0,256])
+# plt.show()
+
+plt.imshow(gray_test3)
+plt.show()
+
+for compare_method in range(4):
+    methods = ['Correlation','Chi-square','Intersection','Bhattacharyya']
+    method = methods[compare_method]
+    base_base = cv.compareHist(hist_base, hist_base, compare_method)
+    base_test0 = cv.compareHist(hist_base, hist_test0, compare_method)
+    base_test1 = cv.compareHist(hist_base, hist_test1, compare_method)
+    base_test2 = cv.compareHist(hist_base, hist_test2, compare_method)
+    base_test3 = cv.compareHist(hist_base, hist_test3, compare_method)
+    print('Method: {} \n base_base, base_swap, test1_like, test2_dislike , base_half\n {} {} {} {} {}'\
+          .format(method,base_base,base_test0,base_test1,base_test2,base_test3))
 ```
