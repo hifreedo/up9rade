@@ -44,7 +44,7 @@ Formula (1),(2),(3),(4) were implemented by OpenCV in compareHist function.
 
 Next, we will construct an experiment on testing above 6 methods:
 
-Take an image as base, it will compare to: itself, half of the base, split base into 2 parts and swap them, a similar image, a none related image. All these images are in same height & width.
+Take an image as base, it will compare to: itself, half of the base, split base into 2 parts and swap them, a similar image, a none related image. All these images are in same height & width, but not necessary to be in square shape.
 
 We will use OpenCV to calculate histogram, and implement above methods manually.
 
