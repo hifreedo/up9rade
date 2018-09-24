@@ -75,10 +75,15 @@ gray_test3 = gray_base[gray_base.shape[0]//2:,:]
 histSize = [256]
 ranges = [0, 256]
 hist_base = cv.calcHist([gray_base], [0], None, histSize, ranges)
+hist_base = hist_base/max(hist_base)
 hist_test0 = cv.calcHist([gray_test0], [0], None, histSize, ranges)
+hist_test0 = hist_test0/max(hist_test0)
 hist_test1 = cv.calcHist([gray_test1], [0], None, histSize, ranges)
+hist_test1 = hist_test1/max(hist_test1)
 hist_test2 = cv.calcHist([gray_test2], [0], None, histSize, ranges)
+hist_test2= hist_test2/max(hist_test2)
 hist_test3 = cv.calcHist([gray_test3], [0], None, histSize, ranges)
+hist_test3 = hist_test3/max(hist_test3)
 
 # plt.plot(hist_base)
 # plt.plot(hist_test0)
@@ -88,8 +93,17 @@ hist_test3 = cv.calcHist([gray_test3], [0], None, histSize, ranges)
 # plt.xlim([0,256])
 # plt.show()
 
-plt.imshow(gray_test3)
-plt.show()
+# plt.imshow(gray_test3)
+# plt.show()
+
+def dh_cosine(h1, h2):
+    # cosine similarity
+    def dot(h1, h2):
+        return sum(a * b for a, b in zip(h1, h2))
+    return dot(h1, h2)/(np.sqrt(dot(h1, h1))*np.sqrt(dot(h2, h2)))
+
+def dh_hist(h1, h2):
+    return sum(abs(t1-t2)/max(t1,t2) for t1, t2 in zip(h1, h2))/len(h1)
 
 for compare_method in range(4):
     methods = ['Correlation','Chi-square','Intersection','Bhattacharyya']
@@ -101,4 +115,25 @@ for compare_method in range(4):
     base_test3 = cv.compareHist(hist_base, hist_test3, compare_method)
     print('Method: {} \n base_base, base_swap, test1_like, test2_dislike , base_half\n {} {} {} {} {}'\
           .format(method,base_base,base_test0,base_test1,base_test2,base_test3))
+    
+method = "cosine"
+base_base = dh_cosine(np.asarray(hist_base), np.asarray(hist_base))
+base_test0 = dh_cosine(hist_base, hist_test0)
+base_test1 = dh_cosine(hist_base, hist_test1)
+base_test2 = dh_cosine(hist_base, hist_test2)
+base_test3 = dh_cosine(hist_base, hist_test3)
+print('Method: {} \n base_base, base_swap, test1_like, test2_dislike , base_half\n {} {} {} {} {}'\
+      .format(method,base_base,base_test0,base_test1,base_test2,base_test3))
+
+method = "hist"
+base_base = dh_hist(np.asarray(hist_base), np.asarray(hist_base))
+base_test0 = dh_hist(hist_base, hist_test0)
+base_test1 = dh_hist(hist_base, hist_test1)
+base_test2 = dh_hist(hist_base, hist_test2)
+base_test3 = dh_hist(hist_base, hist_test3)
+print('Method: {} \n base_base, base_swap, test1_like, test2_dislike , base_half\n {} {} {} {} {}'\
+      .format(method,base_base,base_test0,base_test1,base_test2,base_test3))
 ```
+
+Expected outcomes:
+
