@@ -50,6 +50,8 @@ We will use OpenCV to calculate histogram, and implement above methods manually.
 
 ```python
 # histogram similarity calculation
+# with rgb to gray formats
+# manually implemented similarity calculation functions
 
 import cv2 as cv
 import numpy as np
@@ -96,8 +98,25 @@ hist_test3 = hist_test3/max(hist_test3)
 # plt.imshow(gray_test3)
 # plt.show()
 
+def dh_corr(h1, h2):
+    mean_h1 = np.mean(h1)
+    mean_h2 = np.mean(h2)
+    temp1 = np.sum((h1 - mean_h1) * (h2 - mean_h2)) 
+    temp2 = np.sqrt(np.sum((h1 - mean_h1)**2)*np.sum((h2 - mean_h2)**2))
+    return temp1 / temp2
+
+def dh_chi(h1, h2):
+    return sum((t1 - t2)*(t1 - t2) / t1 for t1, t2 in zip(h1, h2))
+
+def dh_inter(h1, h2):
+    return sum(min(t1, t2) for t1, t2 in zip(h1, h2))
+
+def dh_bha(h1, h2):
+    return np.sqrt(1-1/np.sqrt(np.average(h1)*np.average(h2)\
+        *len(h1)*len(h1))*sum(np.sqrt(t1 * t2) for t1, t2 in zip (h1, h2)))
+
 def dh_cosine(h1, h2):
-    # cosine similarity
+    # cosine similarity, there's a wheel existing with scipy
     def dot(h1, h2):
         return sum(a * b for a, b in zip(h1, h2))
     return dot(h1, h2)/(np.sqrt(dot(h1, h1))*np.sqrt(dot(h2, h2)))
@@ -105,35 +124,75 @@ def dh_cosine(h1, h2):
 def dh_hist(h1, h2):
     return sum(abs(t1-t2)/max(t1,t2) for t1, t2 in zip(h1, h2))/len(h1)
 
-for compare_method in range(4):
-    methods = ['Correlation','Chi-square','Intersection','Bhattacharyya']
-    method = methods[compare_method]
-    base_base = cv.compareHist(hist_base, hist_base, compare_method)
-    base_test0 = cv.compareHist(hist_base, hist_test0, compare_method)
-    base_test1 = cv.compareHist(hist_base, hist_test1, compare_method)
-    base_test2 = cv.compareHist(hist_base, hist_test2, compare_method)
-    base_test3 = cv.compareHist(hist_base, hist_test3, compare_method)
-    print('Method: {} \n base_base, base_swap, test1_like, test2_dislike , base_half\n {} {} {} {} {}'\
-          .format(method,base_base,base_test0,base_test1,base_test2,base_test3))
-    
-method = "cosine"
-base_base = dh_cosine(np.asarray(hist_base), np.asarray(hist_base))
-base_test0 = dh_cosine(hist_base, hist_test0)
-base_test1 = dh_cosine(hist_base, hist_test1)
-base_test2 = dh_cosine(hist_base, hist_test2)
-base_test3 = dh_cosine(hist_base, hist_test3)
-print('Method: {} \n base_base, base_swap, test1_like, test2_dislike , base_half\n {} {} {} {} {}'\
-      .format(method,base_base,base_test0,base_test1,base_test2,base_test3))
+def compare_hist(h1, h2, method):
+    return method(h1, h2)
 
-method = "hist"
-base_base = dh_hist(np.asarray(hist_base), np.asarray(hist_base))
-base_test0 = dh_hist(hist_base, hist_test0)
-base_test1 = dh_hist(hist_base, hist_test1)
-base_test2 = dh_hist(hist_base, hist_test2)
-base_test3 = dh_hist(hist_base, hist_test3)
-print('Method: {} \n base_base, base_swap, test1_like, test2_dislike , base_half\n {} {} {} {} {}'\
-      .format(method,base_base,base_test0,base_test1,base_test2,base_test3))
+methods = {'Correlation':dh_corr,'Chi-square':dh_chi,\
+           'Intersection':dh_inter,'Bhattacharyya':dh_bha,\
+           'Cosine':dh_cosine,'Hist Similarity':dh_hist}
+for method,func in methods.items():
+    base_base = func(hist_base, hist_base)
+    base_test0 = func(hist_base, hist_test0)
+    base_test1 = func(hist_base, hist_test1)
+    base_test2 = func(hist_base, hist_test2)
+    base_test3 = func(hist_base, hist_test3)
+    print('Method: {} \n base_base, base_swap, test1_like, test2_unlike , base_half\n {} {} {} {} {}\n'\
+          .format(method,base_base,base_test0,base_test1,base_test2,base_test3))
 ```
 
 Expected outcomes:
 
+We have OpenCV version as well:
+
+```python
+# histogram similarity calculation
+# with rgb to hsv formats
+# with opencv similarity calculation functions
+
+import cv2 as cv
+import numpy as np
+
+src_base = cv.imread("dataset/base.jpg")
+src_test0 = cv.imread("dataset/base_swap.jpg")
+src_test1 = cv.imread("dataset/test1.jpg")
+src_test2 = cv.imread("dataset/test2.jpg")
+
+hsv_base = cv.cvtColor(src_base, cv.COLOR_BGR2HSV)
+hsv_test0 = cv.cvtColor(src_test0, cv.COLOR_BGR2HSV)
+hsv_test1 = cv.cvtColor(src_test1, cv.COLOR_BGR2HSV)
+hsv_test2 = cv.cvtColor(src_test2, cv.COLOR_BGR2HSV)
+hsv_half_down = hsv_base[hsv_base.shape[0]//2:,:]
+h_bins = 50
+s_bins = 60
+histSize = [h_bins, s_bins]
+# hue varies from 0 to 179, saturation from 0 to 255
+h_ranges = [0, 180]
+s_ranges = [0, 256]
+ranges = h_ranges + s_ranges # concat lists
+# Use the 0-th and 1-st channels
+channels = [0, 1]
+hist_base = cv.calcHist([hsv_base], channels, None, histSize, ranges, accumulate=False)
+cv.normalize(hist_base, hist_base, alpha=0, beta=1, norm_type=cv.NORM_MINMAX)
+hist_half_down = cv.calcHist([hsv_half_down], channels, None, histSize, ranges, accumulate=False)
+cv.normalize(hist_half_down, hist_half_down, alpha=0, beta=1, norm_type=cv.NORM_MINMAX)
+hist_test1 = cv.calcHist([hsv_test1], channels, None, histSize, ranges, accumulate=False)
+cv.normalize(hist_test1, hist_test1, alpha=0, beta=1, norm_type=cv.NORM_MINMAX)
+hist_test2 = cv.calcHist([hsv_test2], channels, None, histSize, ranges, accumulate=False)
+cv.normalize(hist_test2, hist_test2, alpha=0, beta=1, norm_type=cv.NORM_MINMAX)
+hist_test0 = cv.calcHist([hsv_test0], channels, None, histSize, ranges, accumulate=False)
+cv.normalize(hist_test0, hist_test0, alpha=0, beta=1, norm_type=cv.NORM_MINMAX)
+
+methods = ['Correlation','Chi-square',\
+           'Intersection','Bhattacharyya']
+for compare_method in range(4):
+    method = methods[compare_method]
+    base_base = cv.compareHist(hist_base, hist_base, compare_method)
+    base_half = cv.(hist_base, hist_half_down, compare_method)
+    base_test1 = cv.compareHist(hist_base, hist_test1, compare_method)
+    base_test2 = cv.compareHist(hist_base, hist_test2, compare_method)
+    base_test0 = cv.compareHist(hist_base, hist_test0, compare_method)
+    print('Method:', method, '\nPerfect, base_swap, Base-Test(1), Base-Test(2) , Base-Half:\n',\
+          base_base, '/', base_test0, '/', base_test1, '/', base_test2, '/', base_half,'\n')
+```
+
+[post status: half done]
