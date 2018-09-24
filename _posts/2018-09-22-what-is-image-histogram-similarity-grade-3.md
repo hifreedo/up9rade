@@ -28,9 +28,9 @@ given 2 images, if we have had the histograms calculated, how to compare the sim
 
 We represent 6 different methods to compare similarities and will design a test to validate:
 
-$$Correlation: \: d(H_1, H_2) =  \frac{\sum_i(H_1(I)-\overline{H})\sum_i(H_2(I)-\overline{H})}{\sqrt{\sum_i(H_1(I)-\overline{H})^2\sum_i(H_2(I)-\overline{H})^2}}$$
+$$Correlation: \: d(H_1, H_2) =  \frac{\sum_i(H_1(I)-\overline{H_1})(H_2(I)-\overline{H_2})}{\sqrt{\sum_i(H_1(I)-\overline{H})^2\sum_i(H_2(I)-\overline{H})^2}}$$
 
-$$ Chi-Square: \: d(H_1, H_2) =  \sum_i\frac{(H_1(I)-H_2(I)^2}{H_1(I)} $$
+$$ Chi-Square: \: d(H_1, H_2) =  \sum_i\frac{(H_1(I)-H_2(I))^2}{H_1(I)} $$
 
 $$ Intersection: \: d(H_1, H_2) = \sum_imin(H_1(I),H_2(I))$$
 
