@@ -58,12 +58,19 @@ $$s'(x)= s(x) * (1-s(x))$$
 Following is the implementation about calculate derivate of sigmoid:
 
 $$ s(x) = sigmoid(x) = \frac{1}{1+e^{-x}}$$
+
 $$ let \: t = 1 + e^{-x} $$
+
 $$ \frac{d(s)}{d(t)} = -t^{-2} $$
+
 $$ \frac{d(t)}{d(x)} = -e^{-x} $$
+
 $$ \frac{d(s)}{d(x)} = -t^{-2} * -e^{-x} = \frac{e^{-x}}{t^2}=\frac{e^{-x}}{(1+e^{-x})^2} $$
+
 $$ 1 - s(x) = \frac{e^{-x}}{1+e^{-x}} $$
+
 $$ s(x) = \frac{1}{1+e^{-x}}$$
+
 $$ s'(x)= \frac{e^{-x}}{(1+e^{-x})^2} = s(x) * (1-s(x)) $$
 
 As we can see it's easy to calculate the derivate, so we use sigmoid as activation function has the computational reason.
