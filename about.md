@@ -12,7 +12,7 @@ For the main series, will present many grades' challenges.
 
 Will not cover the following:
 
-* If there's already a clear explanation in wikipedia
+* If there's already a clear & better explanation in wikipedia
 
 * Background information as there are too much online materials available
 
