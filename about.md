@@ -10,6 +10,20 @@ Mainly focus on machine learning and deep learning, and try to explain things in
 
 For the main series, will present many grades' challenges.
 
+Will not cover the following:
+
+* If there's already a clear explanation in wikipedia
+
+* Background information as there are too much online materials available
+
+* Abc knowledge if which I could not supply with my own explanation or intuition
+
+Will cover the following:
+
+* Implement something from scratch, aka write a multilayer network from implementing matrix operation
+
+* Link cross domain spots together, aim to have a deeper understanding on certain area
+
 **Intuition about this site**:
 
 Keep trying and learning, until found your own right intuition.
