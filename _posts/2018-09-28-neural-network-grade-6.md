@@ -10,7 +10,7 @@ title: Neural Network [grade 6]
 Hooray! We are in the CNN stage.
 
 Reasons for CNN:
-If you remember in our last post: [mini version with Mnist]({{site.url}}/2018/09/09/neural-network-grade-5.html), we implemented 2 hidden layers' network manually, which could yield with accuracy of 97.5% with a 1000 hidden nodes. Which is great, but with one major defect, the training time is unbearable, with 1000 hidden nodes.
+If you remember in our last post: [mini version with Mnist]({{site.url}}/2018/09/09/neural-network-grade-5.html), we implemented 2 hidden layers' network manually, which could yield with accuracy of 97.5% with a 1000 hidden nodes layer. Which is great, but with one major defect, the training time is unbearable.
 
 In short, with CNN, we will achieve better result with fewer training time. Something like a faster car with a lot of fuel-efficient.
 
