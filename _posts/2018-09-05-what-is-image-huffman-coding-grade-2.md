@@ -101,14 +101,27 @@ Let's consider another scenario, which explains the usage of Huffman coding well
 
 One common approach is the if / else if / else statement, something like:
 ``` python
-if score < 20
-else if score < 40
-else if score < 60
+if score < 60
+else if score < 70
 else if score < 80
+else if score < 90
 else:
 ```
 
-In a first looking, this approach would work, but if take the score distribution into consideration, i.e. majority of the scores are in between 60 ~ 80, we will know this approach is not efficient.
+In a first looking, this approach would work, but if take the score distribution into consideration, i.e. majority of the scores are in between 70 ~ 80, we will know this approach is not efficient.
+
+This is the place where Huffman coding works, if we know the distribution as following:
+
+score | A | B | C | D | E
+--- | --- | --- | --- | --- | ---
+|  | 91 ~ 100 | 81 ~ 90 | 71 ~ 80 | 61 ~ 70 | 51 ~ 60
+| | 10% | 20% | 40% | 16% | 14%
+
+How would we rewrite the conditional statement?
+
+
+
+
 
 
 [post status: half done]
