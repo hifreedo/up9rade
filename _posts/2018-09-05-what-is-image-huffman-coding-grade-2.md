@@ -114,7 +114,7 @@ This is the place where Huffman coding works, if we know the distribution as fol
 
 score | A | B | C | D | E
 --- | --- | --- | --- | --- | ---
-| 91 ~ 100 | 81 ~ 90 | 71 ~ 80 | 61 ~ 70 | 51 ~ 60
+| 91 ~ 100 | 81 ~ 90 | 71 ~ 80 | 61 ~ 70 | 0 ~ 60
 | 10% | 20% | 40% | 16% | 14%
 
 How would we rewrite the conditional statement?
