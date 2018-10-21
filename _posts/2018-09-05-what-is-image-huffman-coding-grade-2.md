@@ -97,4 +97,18 @@ if __name__ == '__main__':
     tree.get_code()
 ```
 
+Let's consider another scenario, which explains the usage of Huffman coding well. Assume we have scores of a great amount of students' exams, which range from 0 to 100, and we want to level them from A to E.
+
+One common approach is the if / else if / else statement, something like:
+``` python
+if score < 20
+else if score < 40
+else if score < 60
+else if score < 80
+else:
+```
+
+In a first looking, this approach would work, but if take the score distribution into consideration, i.e. majority of the scores are in between 60 ~ 80, we will know this approach is not efficient.
+
+
 [post status: half done]
