@@ -32,7 +32,6 @@ Key points:
 * Complexity of nlogn to #n unique characters.
 * Length of code of character is inverse to its frequency.
 
-
 Pesudo codes:
 
 ```python
@@ -138,6 +137,5 @@ else:
 ```
 
 How to deal with "abcc" and how to Huffman decoding.
-
 
 [post status: half done]
