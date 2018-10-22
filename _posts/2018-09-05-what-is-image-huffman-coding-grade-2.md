@@ -23,6 +23,16 @@ There was said huffman coding was invented by David A. Huffman in 1952 while he 
 
 The description in detail [wiki](https://en.wikipedia.org/wiki/Huffman_coding).
 
+Key points:
+
+* Lossless data compression.
+* Optimal prefix code.
+* Variable length code for different symbols.
+* Greedy approach upon frequency of characters.
+* Complexity of nlogn to #n unique characters.
+* Length of code of character is inverse to its frequency.
+
+
 Pesudo codes:
 
 ```python
