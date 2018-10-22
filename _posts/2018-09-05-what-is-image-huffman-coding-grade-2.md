@@ -137,7 +137,7 @@ else if score if score <61:
 else:
 ```
 
-
+How to deal with "abcc" and how to Huffman decoding.
 
 
 [post status: half done]
