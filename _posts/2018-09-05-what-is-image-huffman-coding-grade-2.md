@@ -101,10 +101,10 @@ Let's consider another scenario, which explains the usage of Huffman coding well
 
 One common approach is the if / else if / else statement, something like:
 ``` python
-if score < 60
-else if score < 70
-else if score < 80
-else if score < 90
+if score < 61
+else if score < 71
+else if score < 81
+else if score < 91
 else:
 ```
 
@@ -119,7 +119,13 @@ score | A | B | C | D | E
 
 How would we rewrite the conditional statement?
 
-
+```python
+if score >=71 and score <81:
+else if score >=81 and score < 91:
+else if score score >=61 and score < 71:
+else if score if score <61:
+else:
+```
 
 
 
