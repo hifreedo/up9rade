@@ -136,6 +136,45 @@ else if score if score <61:
 else:
 ```
 
-How to deal with "abcc" & how to Huffman decoding.
+Now, let's talk about encoding and its reverse operation of decoding. Say a string of "abcc", what will its huffman coding looks like?
+
+We could easily figure out in this example:
+
+a: 00
+
+b: 01
+
+c: 1
+
+But wait, what will the coding looks like towards "bacc"? 
+
+It may still be:
+
+a: 00
+
+b: 01
+
+c: 1
+
+Or a: 01, b: 00, c: 1
+
+Towards 2 characters share same frequency, it doesn't matter to sort in alphabetical sequence or not, during preparation for huffman tree construction, as long as the code could be generated and decoded properly.
+
+Secret to decode a encoded huffman content without ambiguity lies in the "prefix code". To understand prefix code, let's see what is none-prefix code first.
+
+Still, take the "abcc" example, if we have:
+
+a: 00, b: 10, c: 001
+
+This is not a prefix, because given a encoded string like: 
+0010001001, we would have problem to tell what 00 means, it could be an "a" or the prefix to "c", which brings ambiguity.
+
+So, a prefix property means, each of prefix code is unique, and, starts looking up from each code's first position, it won't be contained in any other codes start from their first positions.
+
+If we have the following encoding string: 000111 
+and huffman man tree: a: 00, b: 01, c: 1, we may start interpret from its beginning and get out: a b c c.
+
+If we have the same encoding string: 000111 
+and huffman man tree: b: 00, a: 01, c: 1, we may start interpret from its beginning and get out: b a c c.
 
 [post status: half done]
