@@ -16,6 +16,7 @@ For instance, if a CNN robot sitting in the cinema watching a movie, most likely
 
 With saying that, a RNN is not that mysterious, still it could be looked as a CNN, in some way.
 
-
+It's understandable for human beings to predict what's next in a say hi dialog scenario, so do RNN.
+It's difficult for people to inference the ending of a story book by using the information gave from the beginning, so do RNN. With the "refined" RNN, the Long Short Term Memory networks - LSTMs is aim to resolve this.
 
 [post status: in writing]
