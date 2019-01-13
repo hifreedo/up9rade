@@ -21,3 +21,7 @@ And get back to gram, when compare pastiche image with the given image with a ce
 
 As we know, gram matrix is result from a matrix multiplying its transpose, aka every row is multiplied with every column in the matrix, we could treat this process as a way of finding correlations - bigger value multiply with bigger value gets bigger, and smaller gets smaller.
 
+A value in gram matrix close to zero, which denotes the 2 features in given layer of style image do not activate simultaneously, vice versa. Hence with this feature, a gram matrix could reveal the activation pattern of the style image.
+
+In the neural style transfer paper 2015, Gatys et al found better results were made through making a combination of taking both shallow and deep layers of the pre-trained network with vgg.
+
