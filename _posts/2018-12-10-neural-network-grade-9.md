@@ -17,5 +17,8 @@ The convolution process is like to distill a sea into a drop of water, while cal
 
 Convolution is to abstract higher level info from a picture, receptive field calculating is to figure out how many input elements could be counted in one single neuron.
 
+<img src="{{site.url}}/img/nn025.png">
+
+<img src="{{site.url}}/img/nn026.png">
 
 [post status: in writing]
