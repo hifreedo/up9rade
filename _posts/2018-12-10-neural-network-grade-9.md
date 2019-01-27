@@ -19,7 +19,7 @@ The process of calculating receptive field might be a little confusing, yet, we 
 
 Let's start from convolution first, given a simple black & white image input, here for better interpreting, we flat the input, from 2 dimensions into 1 dimension.
 
-Assume there are 8 inputs, following with 3*3 conv with stride 1, and 2*2 pooling with stride 2, then 3*3 conv with stride 1.
+Assume there are 8 inputs, following with 3 * 3 conv with stride 1, and 2 * 2 pooling with stride 2, then 3 * 3 conv with stride 1.
 
 We may construct the network as following:
 
