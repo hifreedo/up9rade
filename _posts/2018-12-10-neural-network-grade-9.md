@@ -29,15 +29,23 @@ There are 5 outputs in layer 1, then 3 in layer 2 and 1 in layer3.
 
 This is a top down approach.
 
-We will use bottom up approach on describing receptive field, let's start with a single neuron in layer 3. According to 3rd layer was generated from a 3*3 con with stride 1, we may decompile there are 3 neurons in front of the neuron of layer 3, this is the "receptive area" layer 3 could see on layer 2.
+We will use bottom up approach on describing receptive field, let's start with a single neuron in layer 3. According to 3rd layer was generated from a 3*3 con with stride 1, we may decompile there are 3 neurons in front of the neuron of layer 3, this is the "receptive area" that layer 3 could see on layer 2.
 
+Moving on, each of the neuron connects to 2 neurons in layer 1, because the layer 2 was construct of 2*2 pooling with stride of 2.
 
+After mapping 6 neurons to 8 neurons in input layer, we done building the network bottom up.
+
+Now tak a look at the green neuron of layer 1, how much could it see from input layer? 3. Which means the receptive field of layer 1 is 3.
+
+Then look at the red neuron from layer 2, how many neurons could it see from the input layer? 4, the receptive field in layer 2 is 4.
+
+Finally, how many could neuron in layer 3 see? 8, the receptive field in layer 3 is 8. Layer 3 could see 3 in layer 2, and see 6 in layer 1, and see 8 in input layer.
+
+The receptive field is not that hard to interpret.
 
 The convolution process is like to distill a sea into a drop of water, while calculating RF (receptive field) is just like to look a whole sea from a drop of water.
 
 Convolution is to abstract higher level info from a picture, receptive field calculating is to figure out how many input elements could be counted in one single neuron.
-
-
 
 <img src="{{site.url}}/img/nn026.png">
 
