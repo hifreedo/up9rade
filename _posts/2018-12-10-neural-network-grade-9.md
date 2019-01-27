@@ -54,8 +54,38 @@ Now, what's it for calculating receptive field?
 1. Calculate parameters in a network, make the network less computation but maintain the similar representation power. Look at the network, with a 3*3 conv then 2*2 pooling then 3*3 conv, we could see which has same power of 8*8 conv.
 2. While on build up a network for classification task, we pay attention to the receptive field in the deepest layer, could it see the whole picture of the input? If not, the performance will be impacted due to receptive field is not big enough.
 
+We gave an easy for interpreting way on explaining receptive field, in reality, we are facing very deep networks, give these circumstances, we will need to calculate receptive fields by programming.
+
+Following is the formula on computing: 
+```python
+receptive_field = stride * rf_size_output + kernel_size - stride
+```
+
+The complete code:
+```python
+
+net_struct = {
+        'alexnet':{
+                'net':[[11,4,0],[3,2,0],[5,1,2],[3,2,0],[3,1,1],[3,1,1],[3,1,1],[3,2,0]],
+                'name':['conv1','pool1','conv2','pool2','conv3','conv4','conv5','pool5']},
+}
+
+def receptive_field(net, layer_num):
+    RF = 1
+    for layer in reversed(range(layer_num)):
+        fsize, stride, pad = net[layer]
+        RF = ((RF -1)* stride) + fsize
+    return RF
+
+for net in net_struct.keys():
+    print '************network %s**************'% net
+    for i in range(len(net_struct[net]['net'])):
+        rf = receptive_field(net_struct[net]['net'], i+1)
+        print "Layer Name = %s, RF size = %3d" % (net_struct[net], rf)
+```
+
+Tensorflow provides a receptive calculation util, you might want to look at its [source code](https://github.com/tensorflow/tensorflow/tree/092a49a2bf181a3571a5b1994b6b9305313a0403/tensorflow/contrib/receptive_field) to get more.
 
 
 
-
-[post status: in writing]
+[post status: almost done]
