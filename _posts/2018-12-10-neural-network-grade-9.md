@@ -86,6 +86,4 @@ for net in net_struct.keys():
 
 Tensorflow provides a receptive calculation util, you might want to look at its [source code](https://github.com/tensorflow/tensorflow/tree/092a49a2bf181a3571a5b1994b6b9305313a0403/tensorflow/contrib/receptive_field) to get more.
 
-
-
 [post status: almost done]
