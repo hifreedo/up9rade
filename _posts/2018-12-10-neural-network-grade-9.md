@@ -49,11 +49,12 @@ Convolution is to abstract higher level info from a picture, receptive field cal
 
 <img src="{{site.url}}/img/nn026.png">
 
-Why calculating receptive field:
+Now, what's it for calculating receptive field?
 
-cal params, save space
+1. Calculate parameters in a network, make the network less computation but maintain the similar representation power. Look at the network, with a 3*3 conv then 2*2 pooling then 3*3 conv, we could see which has same power of 8*8 conv.
+2. While on build up a network for classification task, we pay attention to the receptive field in the deepest layer, could it see the whole picture of the input? If not, the performance will be impacted due to receptive field is not big enough.
 
-build net structure
+
 
 
 
