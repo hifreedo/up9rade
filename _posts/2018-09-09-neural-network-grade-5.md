@@ -65,13 +65,16 @@ Code implementation with python 3 in notebook:
 
 ```python
 # mnist mini version
+from __future__ import print_function, division
+import numpy as np
+import matplotlib.pyplot as plt
 
 # prepare training
 img_size = 28
 img_pixel = 28*28
 num_label = 10
 
-# read data
+# read data, needs to be downloaded in advance
 train_set = np.loadtxt("dataset/mnist/mnist_train.csv", delimiter=",")
 test_set = np.loadtxt("dataset/mnist/mnist_test.csv", delimiter=",")
 
