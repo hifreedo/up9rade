@@ -42,3 +42,34 @@ The program will run with no error or warnings under python 2.7 version, except 
 The "np.random.random" is a python builtin method or function, the "np.random.random()" is a "float". The error is quite covert as the program does not throw out any warning or error message.
 
 This might not be a perfect case to emphasize importance of a single notation, cases like leave out brackets are also quite common in formulas. We will try to come up with more later.
+
+## case 3: dot product on different objects
+```python
+import numpy as np
+a = np.mat("1 2;3 4")
+b = np.mat("1 -1;0 1")
+print(a * b)
+
+print(np.multiply(a, b))
+
+a = np.mat("1 2;3 4").A
+b = np.mat("1 -1;0 1").A
+print(a * b)
+```
+
+Now, question: will these 3 print out the same content?
+If not, which should be applied into dot product when doing convolution operation in deep neural network?
+
+The type of first a is matrix, and second is ndarray, we will need to transform matrix into ndarray to perform convolution dot product or replace "*" with "multiply".
+
+There are the following dot commands in numpy:
+
+```python
+print(np.dot(a, b))
+print(np.matmul(a, b))
+print(a * b)
+print(a@b)
+print(np.multiply(a, b))
+```
+
+Watch out for the correct usage.
