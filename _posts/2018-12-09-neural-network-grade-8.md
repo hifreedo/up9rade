@@ -11,4 +11,9 @@ There's a very comprehensive introduction on convolutional neural networks from 
 
 We will focus on how to implement a cnn from scratch (with numpy), and apply it on mnist dataset.
 
+Key steps for implementation:
+
+1. Convolutional operation;
+2. Back propagation;
+
 [post status: in writing]
