@@ -16,8 +16,8 @@
 title: up9rade
 email: hifreedo# gmail
 description: >- # this means to ignore newlines until "baseurl:"
-  Mainly focus on machine learning and deep learning, explain things in a visualized way.
-  For each series, will present up to 9 grades' challenges.
+  Mainly focus on machine learning and deep learning in domain of image processing, interact with those things in visualized way.
+  For each series, will present 9+ grades' challenges.
 baseurl: / # the subpath of your site, e.g. /blog
 url: "http://up9rade.com" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
