@@ -5,6 +5,17 @@ title: Convolution in forward and backward
 
 # Convolution in forward and backward
 
+Convolution neural network is a specific type of MLP, multi-layer perceptron, yet it complies with MLP's core, which is:
+$$ y = w*x + b $$
+
+With x been transferred forward, to get a cost function (which is a scalar) of:
+
+$$ J(\theta, x, y) $$
+We then back propagate the J, with gradient descent methodology, to compute:
+$$ \frac{\partial J(\theta, x, y)}{\partial \theta} $$
+
+Once done optimization with cost function J, which means we could get the representation parameters with given training data x and label data y.
+
 $$ x = \begin{bmatrix}
 x_1, x_2, x_3
 \end{bmatrix}
