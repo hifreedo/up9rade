@@ -19,6 +19,21 @@ First of all, the image comes with a height & width in pixels, for e.g. we see 2
 
 What's the actual file size aka how much disk space will it take to save a 260x260 pixels image? 
 
+Image size = 260 x 260 * 3 bytes / 1024 kb = 198 kb
+
+A little bit explanation on the equation:
+
+Normally images of jpg on the web, they were consists of 3 color channels, the RGB "red, green, blue". 
+For each channel, use a number in between 0 to 255 to denote, to do so, which takes 8 bits, each bit represents 0 or 1.
+
+Hence, 1 pixel from an image, could use 3 bytes to denote its 3 color channels. 
+
+1 Kb = 1024 bytes.
+
+This is the same size if you open this image in photoshop.
+But wait, if you check the image file info in your operation system, doesn't matter Mac or Wins, you found it's not the number of 198 kb as we calculated on the "size". 
+
+What's going on? 
 
 
 
