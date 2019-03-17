@@ -28,6 +28,8 @@ $$
 \frac{\partial L}{\partial w} \qquad and \qquad  \frac{\partial L}{\partial x}
 $$
 
+### Part 1:
+
 According to "chain rule" in calculus, 
 
 $$
@@ -68,7 +70,15 @@ x_1 \\ x_2 \\ x_3
 = x^T
 $$
 
+### Part 2:
 
+According to "chain rule" in calculus, 
+
+$$
+\frac{\partial L}{\partial x} = \frac{\partial L}{\partial y} * \frac{\partial y}{\partial x}
+$$
+
+<img src="{{site.url}}/img/nn028.png">
 
 $$
 
