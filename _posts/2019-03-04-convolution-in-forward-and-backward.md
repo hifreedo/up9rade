@@ -20,7 +20,25 @@ Following is a simplified convolution network, let's assume an image input with 
 
 <img src="{{site.url}}/img/nn027.png">
 
+We have:  $\frac{\partial L}{\partial y}$ already known.
 
+2 unknowns going to be solved:
+
+$$
+\frac{\partial L}{\partial w} \qquad and \qquad  \frac{\partial L}{\partial x}
+$$
+
+According to "chain rule" in calculus, 
+
+$$
+\frac{\partial L}{\partial w} = \frac{\partial L}{\partial y} * \frac{\partial y}{\partial w}
+$$
+
+$$
+\frac{\partial L}{\partial w} = \frac{\partial L}{\partial y} * \frac{\partial {(x * w)}}{\partial w} = \frac{\partial L}{\partial y} * x^T
+$$
+
+How does this magic $x^T$ comes out?
 
 $$ x = \begin{bmatrix}
 x_1, x_2, x_3
