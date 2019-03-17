@@ -16,6 +16,12 @@ $$ \frac{\partial J(\theta, x, y)}{\partial \theta} $$
 
 Once done optimization with cost function J, which means we could get the representation parameters with given training data x and label data y.
 
+Following is a simplified convolution network, let's assume an image input with 1 channel, a kernel filter with 1 channel and an output with padding on input layer, which makes the output size is same as input.
+
+<img src="{{site.url}}/img/nn027.png">
+
+
+
 $$ x = \begin{bmatrix}
 x_1, x_2, x_3
 \end{bmatrix}
