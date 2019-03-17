@@ -40,6 +40,16 @@ $$
 
 How does this magic $x^T$ comes out?
 
+Well, let's review the traditional & im2col convolutional process again, you may easily find more reference infos about traditional & im2cold through web.
+
+<img src="{{site.url}}/img/nn028.png">
+
+Here we'd like to emphasize that, through the im2col method, we may transfer convolutional to matrix product.
+
+And if we simplify kernel as one, this actually turns into "jacobian matrix", by then, the kernel and output both turns into "column vector".
+
+Following is an explanation intuitively about why there is an $x^T$.
+
 $$ x = \begin{bmatrix}
 x_1, x_2, x_3
 \end{bmatrix}
@@ -57,6 +67,8 @@ x_1 \\ x_2 \\ x_3
 \end{bmatrix}
 = x^T
 $$
+
+
 
 $$
 
