@@ -92,6 +92,26 @@ Take a pixel from upper left of the input, say "p". What's the scope of impact o
 
 Through the 2*2 kernel, we could see 1 pixel from "x" will affect 2*2 pixels in "y", in the sequence of "pd, pc, pb, pa".
 
+A little bit details on how do we get the "pd, pc, pb, pa":
 
+With 2*2 kernel and stride 1, we could find out the output value of y on the upper left equals to: p*d + f(rest3pixels * rest3weights), in short p*d + f(c) .
+
+2 notices: in order keep output size is equal to the input x, we added padding in x, denoted by line of dashes. The f(c) is not important, because when calculating derivative of $\frac{\partial y_p}{\partial x_p}$ , the f(c) will be eliminated.
+
+Now let's move back to the implementation, we have: 
+
+$$p * kernel(a, b , c , d) = {pd, pc, pb, pa}$$
+
+This is exactly:
+
+$$p * kernel^{flip} = {pd, pc, pb, pa}$$
+
+What an interesting finding!
+
+By solving $\frac{\partial y_p}{\partial x_p}$, we now get: 
+
+$$
+\frac{\partial L}{\partial x} = \frac{\partial L}{\partial y} * w^{flip}
+$$
 
 
