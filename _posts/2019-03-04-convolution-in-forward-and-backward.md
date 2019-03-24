@@ -13,7 +13,7 @@ $$ y = w*x + b $$
 With x been transferred forward, to get a cost function (which is a scalar) of:
 
 $$ J(\theta, x, y) $$
-We then back propagate the J, with gradient descent methodology, to compute:
+We then back propagate the J function, with gradient descent methodology, to compute:
 $$ \frac{\partial J(\theta, x, y)}{\partial \theta} $$
 
 Once done optimization with cost function J, which means we could get the representation parameters with given training data x and label data y.
@@ -50,7 +50,7 @@ Well, let's review the traditional & im2col convolutional process again, you may
 
 Here we'd like to emphasize that, through the im2col method, we may transfer convolutional to matrix product.
 
-And if we simplify kernel as one, this actually turns into "jacobian matrix", by then, the kernel and output both turns into "column vector".
+And if we simplify kernel into just one kernel, this actually turns into "jacobian matrix", by doing that, the kernel and output both turns into "column vector".
 
 Following is an explanation intuitively about why there is an $x^T$.
 
@@ -80,8 +80,17 @@ $$
 \frac{\partial L}{\partial x} = \frac{\partial L}{\partial y} * \frac{\partial y}{\partial x}
 $$
 
+We have $\frac{\partial L}{\partial y}$ already known, and going to figure out $\frac{\partial y}{\partial x}$.
+
+With saying $\frac{\partial y}{\partial x}$, the factor behind the scene is, what's the scope of impact with one unit chaning on "x" will put on "y".
+
+Let's take a look at the convolution procedure again:
+
 <img src="{{site.url}}/img/nn029.png">
 
+Take a pixel from upper left of the input, say "p". What's the scope of impact of "p", will put on output "y"?
+
+Through the 2*2 kernel, we could see 1 pixel from "x" will affect 2*2 pixels in "y", in the sequence of "pd, pc, pb, pa".
 
 
 
