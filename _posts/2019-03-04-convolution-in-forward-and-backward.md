@@ -114,4 +114,27 @@ $$
 \frac{\partial L}{\partial x} = \frac{\partial L}{\partial y} * w^{flip}
 $$
 
+Let's find out more about the multiplication:
 
+Assume size of input is: $N_1 * N_2$ and size of kernel is $K_1 * K_2$, we know size of output is the same as input: $N_1 * N_2$
+
+$$
+|\frac{\partial L}{\partial y}| = N_1 * N_2
+\qquad
+|w^{flip}| = K_1 * K_2
+$$
+
+Hence, this is another convolution.
+
+To recap, on calculating $\frac{\partial L}{\partial w}$, we transfer the convolution into the matrix multiplication by im2col method.
+
+On calculating $\frac{\partial L}{\partial x}$, we take out 1 pixel from input to observe the consequence in the output.
+
+With this in mind, let's come to the conclusion: 
+
+### Conclusion:
+The forward process is convolution.
+
+The backward process is also convolution, with flipped kernel.
+
+[post status: almost done]
