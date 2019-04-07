@@ -42,11 +42,11 @@ bi_search(arr, 2)
 
 Decipher on the implementation:
 
-#### boundary check
+### boundary check
 
 Firstly, boundary check and if there's no satisfactory number exists in given array, we may stop early.
 
-#### sector 1
+### sector 1
 
 Now come to the search part, in sector 1:
 We loop from left to right of an array, if you remember we usually for things like this:
@@ -56,8 +56,8 @@ for (i = 0; i < len; i++)
 And here is an intelligible explanation:
 [Why numbering should start at zero](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html)
 
-#### sector 2
-About the mid-point part, 
+### sector 2
+About the mid-point part,
 
 mid = l + (r - l)//2
 
@@ -69,20 +69,21 @@ This is also work for python, but will put an adverse effect on stack over flow 
 
 And why //2 instead of /2 in python, in python 3, / is the operator to floating-point division and // is to integer division.
 
-#### sector 3
+### sector 3
 
 Here, we start with:
 
 arr[mid] < n instead of arr[mid] > n
 
+It also implies with our initial logic, let the program search from left/first to right/last, by assuming arr[mid] < n, step by step, moves the search scale.
 
-#### sector 4
+### sector 4
 
 Why using:
 
 first = mid +1 instead of first = mid here?
 
-Avoid the situation of dead loop. Consider when will the " while first < last " condition always be true?
+Avoid the situation of dead loop. Consider when will the " while first < last " condition always be true (aka dead loop)?
 
 The answer is, when:
 
@@ -90,7 +91,7 @@ first = last = mid
 
 The binary search procedure is to squeeze the search space of [first, last), once the process managed to squeeze the elements between first and last, into one, and by coincidence the element is bigger than given n, the program will trapped into dead loop, and this happens.
 
-With first = mid + 1 been given, this situation will be avoided.
+With first = mid + 1 been given, this situation will be avoided. And the program ends when first == last, search scale becomes to [first, last), at this moment, returns first or last doesn't matter, they share the same value.
 
 Following are 2 other implementations.
 
