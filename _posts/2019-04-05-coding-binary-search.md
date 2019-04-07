@@ -51,7 +51,7 @@ Firstly, boundary check and if there's no satisfactory number exists in given ar
 Now come to the search part, in sector 1:
 We loop from left to right of an array, if you remember we usually for things like this:
 
-for (i = 0; i < len; i++)
+```for (i = 0; i < len; i++)```
 
 And here is an intelligible explanation:
 [Why numbering should start at zero](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html)
@@ -59,11 +59,11 @@ And here is an intelligible explanation:
 ### sector 2
 About the mid-point part,
 
-mid = l + (r - l)//2
+```mid = l + (r - l)//2```
 
 There's an alternative way:
 
-mid = (l + r)//2
+```mid = (l + r)//2```
 
 This is also work for python, but will put an adverse effect on stack over flow in c and java, because l + r might cross memory boundary when these 2 numbers are big enough.
 
@@ -73,7 +73,7 @@ And why //2 instead of /2 in python, in python 3, / is the operator to floating-
 
 Here, we start with:
 
-arr[mid] < n instead of arr[mid] > n
+```arr[mid] < n``` instead of ```arr[mid] > n```
 
 It also implies with our initial logic, let the program search from left/first to right/last, by assuming arr[mid] < n, step by step, moves the search scale.
 
@@ -87,7 +87,7 @@ Avoid the situation of dead loop. Consider when will the " while first < last " 
 
 The answer is, when:
 
-first = last = mid
+```first = last = mid```
 
 The binary search procedure is to squeeze the search space of [first, last), once the process managed to squeeze the elements between first and last, into one, and by coincidence the element is bigger than given n, the program will trapped into dead loop, and this happens.
 
