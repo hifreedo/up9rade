@@ -58,3 +58,38 @@ function bi_search(arr, n){
 arr = [1, 2, 2, 3, 4, 5, 5, 5, 7];
 console.log(bi_search(arr, 2));
 ```
+
+C Version
+
+```c
+#include <stdio.h>
+
+#define ARR_LEN(arr) (sizeof(arr) / sizeof(arr[0]))
+
+int bi_search(int arr[], int len, int n){
+    if (len == 0) return -1;
+    if (arr[len-1] < n) return -1;
+    int l = 0;
+    int r = len;
+    while (l<r){
+        int mid = l + (r-l)/2;
+        if (arr[mid] < n)
+            l = mid + 1;
+        else
+            r = mid;
+    }
+    return l;
+}
+
+int main() {
+    int n, rst;
+    int arr[] = {1, 2, 2, 3, 4, 5, 5, 5, 7};
+    int len = ARR_LEN(arr);
+    printf("\nPlease input a number: ");
+    scanf("%d", &n);
+    rst = bi_search(arr, len, n);
+    printf("Answer is %d\n", rst);
+}
+
+```
+
