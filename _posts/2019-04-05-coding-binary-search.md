@@ -81,9 +81,9 @@ It also implies with our initial logic, let the program search from left/first t
 
 Why using:
 
-first = mid +1 instead of first = mid here?
+```first = mid +1``` instead of ```first = mid``` here?
 
-Avoid the situation of dead loop. Consider when will the " while first < last " condition always be true (aka dead loop)?
+Avoid the situation of dead loop. Consider when will the ```while first < last``` condition always be true (aka dead loop)?
 
 The answer is, when:
 
@@ -91,7 +91,7 @@ The answer is, when:
 
 The binary search procedure is to squeeze the search space of [first, last), once the process managed to squeeze the elements between first and last, into one, and by coincidence the element is bigger than given n, the program will trapped into dead loop, and this happens.
 
-With first = mid + 1 been given, this situation will be avoided. And the program ends when first == last, search scale becomes to [first, last), at this moment, returns first or last doesn't matter, they share the same value.
+With ```first = mid + 1``` been given, this situation will be avoided. And the program ends when ```first == last```, search scale becomes to [first, last), at this moment, returns first or last doesn't matter, they share the same value.
 
 Following are 2 other implementations.
 
