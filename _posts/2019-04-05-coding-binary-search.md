@@ -91,7 +91,11 @@ The answer is, when:
 
 The binary search procedure is to squeeze the search space of [first, last), once the process managed to squeeze the elements between first and last, into one, and by coincidence the element is bigger than given n, the program will trapped into dead loop, and this happens.
 
-With ```first = mid + 1``` been given, this situation will be avoided. And the program ends when ```first == last```, search scale becomes to [first, last), at this moment, returns first or last doesn't matter, they share the same value.
+With ```first = mid + 1``` been given, this situation will be avoided.
+
+You might saying, wait, how would we know one more element won't be skipped during search since we add 1 to mid? Yes, it won't happen, by looking at the condition, ```arr[mid] < n``` , instead of ```arr[mid] <= n```, so we know adding 1 to mid, won't skip one more element.
+
+And the program ends when ```first == last```, search scale becomes to [first, last), at this moment, returns first or last doesn't matter, they share the same value.
 
 Following are 2 other implementations.
 
