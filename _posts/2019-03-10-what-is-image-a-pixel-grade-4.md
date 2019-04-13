@@ -32,6 +32,6 @@ But wait, if you check the image file info in your operation system, doesn't mat
 
 What's going on? 
 
-
+In image compression, the file size is not calculated by its pixels. As we introduced in previous post,  [What is image file]({{site.url}}/2018/08/26/what-is-image-jpeg-heif-grade-1.html), jpeg is the commonly used lossy compression for images.
 
 
