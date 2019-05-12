@@ -19,3 +19,4 @@ Though tends to minimize information loss, it's a "lossy compression".
 | reduction | one way, dimensionality | bilateral, dimensionality(right matrix) and sample numbers(left matrix)
 
 
+[post status: fresh start]
