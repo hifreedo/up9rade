@@ -11,6 +11,13 @@ PCA relies on orthogonal transformation, to covert a set of possibly correlated 
 
 Though tends to minimize information loss, it's a "lossy compression". 
 
+Steps of calculating PCA:
+1. Zero mean of dataset;
+2. Covariance matrix;
+3. Eigenvectors & eigenvalues;
+4. Decide top K values;
+
+
 |     | PCA  | SVD
 |  ----  | ----  | ----
 | purpose  | dimensionality reduction | matrix decomposition
