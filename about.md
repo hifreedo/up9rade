@@ -8,7 +8,9 @@ permalink: /about/
 
 Mainly focus on machine learning and deep learning, and try to explain things in visualized and easy to be interpreted way.
 
-For the main series, will present multiple grades' challenges.
+More like a draft about machine learning and mathematics, about image and miscellany.
+
+The good side about it's positioning of draft: keeps updating with learning.
 
 Will NOT cover the following:
 
