@@ -17,7 +17,6 @@ Steps of calculating PCA:
 3. Eigenvectors & eigenvalues;
 4. Decide top K values;
 
-
 |     | PCA  | SVD
 |  ----  | ----  | ----
 | purpose  | dimensionality reduction | matrix decomposition
@@ -25,5 +24,7 @@ Steps of calculating PCA:
 | computation | less efficient, needs solve cov matrix  | efficient
 | reduction | one way, dimensionality | bilateral, dimensionality(right matrix) and sample numbers(left matrix)
 
+
+Other than dimensionality reduction, PCA was introduced into image argumentation with the "ImageNet Classiﬁcation with Deep Convolutional Neural Network" aka AlexNet.
 
 [post status: fresh start]
