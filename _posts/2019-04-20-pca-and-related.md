@@ -18,6 +18,28 @@ While the measurement for PCA is different. The optimization is to lead to:
 * maximum variance (which remains maximum original data information)
 * minimum covariance (which eliminates correlated dimensions)
 
+First of all, we make zero mean of all the data.
+$$
+Var(a) = \frac{1}{n}\sum_{i=1}^{n}(a - \bar{a})^2
+\\
+Cov(a, b) = \frac{1}{n}\sum_{i=1}^{n}(a - \bar{a})(b-\bar{b}) = \frac{1}{n}\sum_{i=1}^{n}ab
+$$
+Our initiative is to maximize Var(a) and minimize Cov(a,b).
+
+And there's a perfect equation on this:
+
+$$
+\frac{1}{n}XX^T
+$$
+
+According to definition of covariance matrix, which consists of variance of variables along the main diagonal and the covariance between each variables in the other matrix positions.
+
+So, the leads is clear now:
+Try to maximize the values along the main diagonal and sort them by descend, and minimize the other values through the matrix.
+
+
+
+
 Though tends to minimize information loss, it's a "lossy compression". 
 
 Steps of calculating PCA:
