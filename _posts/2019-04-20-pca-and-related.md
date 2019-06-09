@@ -58,4 +58,12 @@ Steps of calculating PCA:
 
 Other than dimensionality reduction, PCA was introduced into image argumentation with the "ImageNet Classiﬁcation with Deep Convolutional Neural Network" aka AlexNet.
 
+According to the paper, Alex et.al decreased top 1 error rate by 1% in imagenet, which was pretty amazing.
+
+The method is:
+
+$$NewImage = [p_1, p_2, p_3][\alpha_1\lambda_1,\alpha_2\lambda_2,\alpha_3\lambda_3 ]$$
+
+p is the eigen vector, lambda is eigen value, alpha is Gaussian random with zero mean and std variation 0.1.
+
 [post status: fresh start]
