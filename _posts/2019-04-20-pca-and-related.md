@@ -22,6 +22,8 @@ While the measurement for PCA is different. The optimization is to lead to:
 
 <img src="{{site.url}}/img/pca01.png">
 
+In my personal view, the cost function & optimization methodology may be swap between these two, it's mainly due to established by usage and for the sake of easy to implementation.
+
 First of all, we make zero mean of all the data.
 $$
 Var(a) = \frac{1}{n}\sum_{i=1}^{n}(a - \bar{a})^2
@@ -42,15 +44,20 @@ So, the leads is clear now:
 Try to maximize the values along the main diagonal and sort them by descend, and minimize the other values through the matrix.
 
 
-
-
 Though tends to minimize information loss, it's a "lossy compression". 
 
-Steps of calculating PCA:
+#### Steps of calculating PCA
+
 1. Zero mean of dataset;
 2. Covariance matrix;
 3. Eigenvectors & eigenvalues;
 4. Decide top K values;
+
+A practice for deciding K:
+
+$$ \frac{\sum_{i=0}^{k}\lambda_k}{\sum_{i=0}^{n}\lambda_n} \geqslant 0.99 $$
+
+#### PCA & SVD
 
 |     | PCA  | SVD
 |  ----  | ----  | ----
