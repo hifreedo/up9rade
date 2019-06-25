@@ -25,11 +25,15 @@ While the measurement for PCA is different. The optimization is to lead to:
 In my personal view, the cost function & optimization methodology may be swap between these two, it's mainly due to established by usage and for the sake of easy to implementation.
 
 First of all, we make zero mean of all the data.
+
 $$
 Var(a) = \frac{1}{n}\sum_{i=1}^{n}(a - \bar{a})^2
-\\
+$$
+
+$$
 Cov(a, b) = \frac{1}{n}\sum_{i=1}^{n}(a - \bar{a})(b-\bar{b}) = \frac{1}{n}\sum_{i=1}^{n}ab
 $$
+
 Our initiative is to maximize Var(a) and minimize Cov(a,b).
 
 And there's a perfect equation on this:
@@ -42,7 +46,6 @@ According to definition of covariance matrix, which consists of variance of vari
 
 So, the leads is clear now:
 Try to maximize the values along the main diagonal and sort them by descend, and minimize the other values through the matrix.
-
 
 Though tends to minimize information loss, it's a "lossy compression". 
 
@@ -66,6 +69,15 @@ $$ \frac{\sum_{i=0}^{k}\lambda_k}{\sum_{i=0}^{n}\lambda_n} \geqslant 0.99 $$
 | computation | less efficient, needs solve cov matrix  | efficient
 | reduction | one way, dimensionality | bilateral, dimensionality(right matrix) and sample numbers(left matrix)
 
+Towards bilateral dimensionality reduction, let's assume we have input data set m*n. According to SVD:
+
+$$ SVD = U_{m,r}\sum_{r,r}V_{r,n}^T $$
+
+$$ New = U_{m,r}^TX_{m,n} $$
+
+By transformation, we may get a new matrix with r * n, here we managed to reduct the rows from the original data set, that's another way of data set reduction.
+
+#### PCA is more than dimensionality reduction
 
 Other than dimensionality reduction, PCA was introduced into image argumentation with the "ImageNet Classiﬁcation with Deep Convolutional Neural Network" aka AlexNet.
 
