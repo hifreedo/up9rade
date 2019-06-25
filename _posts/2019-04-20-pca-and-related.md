@@ -9,6 +9,8 @@ Principal component analysis is a methodology widely implemented in dimensionali
 
 PCA relies on orthogonal transformation, to covert a set of possibly correlated variables into a set of linearly independent / uncorrelated variables, which were called principal components.
 
+#### PCA & Linear Regression
+
 The difference between PCA & linear regression, to the latter, the cost function is:
 
 $$argmin\frac{1}{2}(h(\Theta)-y)^2$$
@@ -17,6 +19,8 @@ While the measurement for PCA is different. The optimization is to lead to:
 
 * maximum variance (which remains maximum original data information)
 * minimum covariance (which eliminates correlated dimensions)
+
+<img src="{{site.url}}/img/pca01.png">
 
 First of all, we make zero mean of all the data.
 $$
