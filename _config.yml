@@ -14,10 +14,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: up9rade
-email: hifreedo# hotmail
+#email: 
 description: >- # this means to ignore newlines until "baseurl:"
-  Mainly focus on machine learning and deep learning in domain of image processing, interact with those things in visualized way.
-  For each series, will present 9+ grades' challenges.
+  A variety of computer science/maching learning, personal hobbies, career experience, across with learning to learn.
+  Thoughts only on my own.
+  关于学习的学习，计算机、个人兴趣以及工作经历的想法。未经许可，不得转载。
 baseurl: / 
 url: "http://up9rade.com"
 #twitter_username: 

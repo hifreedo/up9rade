@@ -6,36 +6,20 @@ permalink: /about/
 
 **About up9rade**:
 
-Mainly focus on machine learning and deep learning, and try to explain things in visualized and easy to be interpreted way.
+  A variety of computer science/maching learning, personal hobbies, career experience, across with learning to learn.
 
-More like a draft about machine learning and mathematics, about image and miscellany.
+  Thoughts only on my own.
 
-The good side about it's positioning of draft: keeps updating with learning.
+  With regards to the CS domain, 
 
-Will NOT cover the following:
+  * Will implement something from scratch, aka write a multilayer network from implementing matrix operation.
+  * Will not post until could supply with my own explanation or intuition.
+  * Link cross domain knowledge, reconnect isolated islands, just like the neurons connect with each other, to have a deeper understanding by asking what is what.
 
-* If there's already a clear & better explanation in wikipedia
+A cheerful journey with findings beyond textbooks.
 
-* Background information as there are too much online materials available
+双语博客，关于计算机，工作经历以及个人兴趣。Learning to learn，中心是关于学习的学习。
 
-* Abc knowledge if which I could not supply with my own explanation or intuition
+技术内容文章偏向广度，如果对某个技术点没有自身理解，则不会写。
 
-Will cover the following:
-
-* Implement something from scratch, aka write a multilayer network from implementing matrix operation
-
-* Link cross domain spots together, aim to have a deeper understanding on certain area
-
-**Intuition about this site**:
-
-Keep trying and learning, until found your own right intuition.
-
-**Interesting factors about the posts**:
-
-You will find majority of the posts are in status of : ongoing and unfinished.
-You may read from grade 1 if you are new in related field.
-
-By asking what is what? What is what of what?
-Constructing knowledge system wider and deeper, it's a way to reconnect isolated islands and just like the neurons connect with each other.
-
-It's a cheerful journey because you will find something never been taught through textbooks.
+未经许可，不得转载。
