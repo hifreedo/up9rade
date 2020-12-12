@@ -89,4 +89,4 @@ $$NewImage = [p_1, p_2, p_3][\alpha_1\lambda_1,\alpha_2\lambda_2,\alpha_3\lambda
 
 Where p is the eigen vector, lambda is eigen value, alpha is Gaussian random with zero mean and std variation 0.1.
 
-[post status: fresh start]
+[post status: half done]
