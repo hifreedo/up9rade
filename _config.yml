@@ -18,20 +18,18 @@ email: hifreedo# hotmail
 description: >- # this means to ignore newlines until "baseurl:"
   Mainly focus on machine learning and deep learning in domain of image processing, interact with those things in visualized way.
   For each series, will present 9+ grades' challenges.
-baseurl: / # the subpath of your site, e.g. /blog
-url: "http://up9rade.com" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: jekyllrb
-github_username:  hifreedo
+baseurl: / 
+url: "http://up9rade.com"
+#twitter_username: 
+#github_username:  
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-cayman
+theme: minima
 plugins:
   - jekyll-feed
 
 # Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
 # exclude:
 #   - Gemfile
 #   - Gemfile.lock
