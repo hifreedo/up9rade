@@ -31,6 +31,6 @@ Python的入门门槛很低，也正因为此，许多人使用python的水平�
 当然，Swift及其对应的SwiftUI开发也有很明显的弊端，让它的学习更为困难。比如，看2020.5月份 Stanford CS193P的网上课程，到9月份的时候，课程里的例子已经不能运行了，因为苹果又更新了。
 当然，不是非常大的变化，但对初学者也说，也是属于额外的挑战。
  
- 
+[post status]: in progress
 
 tag: 编程 python swift
